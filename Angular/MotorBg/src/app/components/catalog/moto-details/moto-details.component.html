@@ -1,0 +1,31 @@
+<div class="card-footer text-muted">
+ 
+  </div> 
+  <div class="card-footer text-muted">
+ 
+  </div>    
+<div *ngIf="singleMotor"  class="container w-50 mt-5 card mb-3">
+<h3 class="card-header">{{singleMotor.model}}</h3>                
+      <img class="thumbnail" src="{{singleMotor.image}}">
+      <div class="card-body">
+      <p class="card-text">{{singleMotor.description}}</p>
+      </div>
+      <ul class="list-group">
+        <li class="list-group-item"><h5>Price:  </h5>
+          <span >{{singleMotor.price}}$ </span>
+        </li>
+        <li class="list-group-item"> <h5>City:  </h5>
+          <a href="#">{{singleMotor.city}}</a>
+        </li>   
+      </ul>
+      <a  href="#" target="_blank" class="btn btn-default">See what the weather in {{singleMotor.city}} will be like!</a>   
+       
+  </div>
+  <div class="card-footer text-muted">
+ 
+  </div>
+  <!-- <div class="bs-component">
+    <div class="progress">
+      <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+    </div>
+  </div>    -->

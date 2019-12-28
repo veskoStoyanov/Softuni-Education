@@ -1,0 +1,26 @@
+<main role="main">
+
+    
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h1 class="panel-title">All Available Motors</h1>
+      </div>
+      <div class="bs-component">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+        </div>
+      <app-search></app-search>
+      <div class="panel-body">
+        <div *ngIf="motors" class="row"> 
+        <div *ngFor="let motor of motors" class="col-md-3">
+          <div>
+          <app-motor [motor]="motor">
+          </app-motor>
+          </div>
+        </div>  
+        </div>
+      </div>
+    </div>
+    
+    </div>
+    </main>

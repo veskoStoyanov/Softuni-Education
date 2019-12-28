@@ -1,0 +1,11 @@
+D:\SoftUni\C#\Matrix\Diagonal-Difference\bin\Debug\netcoreapp3.1\Diagonal-Difference.exe
+D:\SoftUni\C#\Matrix\Diagonal-Difference\bin\Debug\netcoreapp3.1\Diagonal-Difference.deps.json
+D:\SoftUni\C#\Matrix\Diagonal-Difference\bin\Debug\netcoreapp3.1\Diagonal-Difference.runtimeconfig.json
+D:\SoftUni\C#\Matrix\Diagonal-Difference\bin\Debug\netcoreapp3.1\Diagonal-Difference.runtimeconfig.dev.json
+D:\SoftUni\C#\Matrix\Diagonal-Difference\bin\Debug\netcoreapp3.1\Diagonal-Difference.dll
+D:\SoftUni\C#\Matrix\Diagonal-Difference\bin\Debug\netcoreapp3.1\Diagonal-Difference.pdb
+D:\SoftUni\C#\Matrix\Diagonal-Difference\obj\Debug\netcoreapp3.1\Diagonal-Difference.csprojAssemblyReference.cache
+D:\SoftUni\C#\Matrix\Diagonal-Difference\obj\Debug\netcoreapp3.1\Diagonal-Difference.AssemblyInfoInputs.cache
+D:\SoftUni\C#\Matrix\Diagonal-Difference\obj\Debug\netcoreapp3.1\Diagonal-Difference.AssemblyInfo.cs
+D:\SoftUni\C#\Matrix\Diagonal-Difference\obj\Debug\netcoreapp3.1\Diagonal-Difference.dll
+D:\SoftUni\C#\Matrix\Diagonal-Difference\obj\Debug\netcoreapp3.1\Diagonal-Difference.pdb

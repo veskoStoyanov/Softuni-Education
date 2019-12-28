@@ -1,0 +1,11 @@
+D:\SoftUni\C#\Matrix\solve\solve\bin\Debug\netcoreapp3.1\solve.exe
+D:\SoftUni\C#\Matrix\solve\solve\bin\Debug\netcoreapp3.1\solve.deps.json
+D:\SoftUni\C#\Matrix\solve\solve\bin\Debug\netcoreapp3.1\solve.runtimeconfig.json
+D:\SoftUni\C#\Matrix\solve\solve\bin\Debug\netcoreapp3.1\solve.runtimeconfig.dev.json
+D:\SoftUni\C#\Matrix\solve\solve\bin\Debug\netcoreapp3.1\solve.dll
+D:\SoftUni\C#\Matrix\solve\solve\bin\Debug\netcoreapp3.1\solve.pdb
+D:\SoftUni\C#\Matrix\solve\solve\obj\Debug\netcoreapp3.1\solve.csprojAssemblyReference.cache
+D:\SoftUni\C#\Matrix\solve\solve\obj\Debug\netcoreapp3.1\solve.AssemblyInfoInputs.cache
+D:\SoftUni\C#\Matrix\solve\solve\obj\Debug\netcoreapp3.1\solve.AssemblyInfo.cs
+D:\SoftUni\C#\Matrix\solve\solve\obj\Debug\netcoreapp3.1\solve.dll
+D:\SoftUni\C#\Matrix\solve\solve\obj\Debug\netcoreapp3.1\solve.pdb

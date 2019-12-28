@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`html should render corecttly! checks for html changes in MapContainer 1`] = `<DefaultLoadingContainer />`;

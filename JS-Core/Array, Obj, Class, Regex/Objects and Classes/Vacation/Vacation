@@ -1,0 +1,76 @@
+class Vacation {
+    constructor(organizer, destination, budget) {
+        this.organizer = organizer;
+        this.destination = destination;
+        this.budget = budget;
+        this.kids = {};
+    }
+    
+    registerChild(name, grade, budget) {
+        if (budget >= this.budget) {
+            if (!this.kids.hasOwnProperty(grade)) {
+                this.kids[grade] = [];
+            }
+         
+            for (const kid of this.kids[grade]) {
+                let [named, budgeted] = kid.split('-');
+                if(named === name){
+                    return `${name} is already in the list for this ${this.destination} vacation.`
+                }
+            }
+
+            this.kids[grade].push(`${name}-${budget}`);
+            return this.kids[grade];
+
+            } else {
+            return `${name}'s money is not enough to go on vacation to ${this.destination}.`
+        }
+    }
+    removeChild(name, grade) {
+        if (this.kids.hasOwnProperty(grade)) {
+           
+           for (let i = 0; i < this.kids[grade].length; i++) {
+            let [named, budgeted] = this.kids[grade][i].split('-');
+              if(named === name){
+                this.kids[grade].splice(i, 1);
+                return this.kids[grade];
+              }              
+           }
+           
+            return `We couldn't find ${name} in ${grade} grade.`
+        } else {
+            return `We couldn't find ${name} in ${grade} grade.`
+        }
+    }
+
+    toString() {
+        let numberKids = 0;
+        let children = Object.keys(this.kids);
+        for (const ch of children) {
+            numberKids += this.kids[ch].length;
+        }
+        let keys = Object.keys(this.kids).sort((a, b) => a - b);
+        let result ='';   
+        if (keys.length > 0) {
+            result += `${this.organizer} will take ${numberKids} children on trip to ${this.destination}\n`
+            for (let gr of keys) {
+                result += `Grade: ${gr}\n`;
+                for (let i = 0; i < this.kids[gr].length; i++) {
+                    result +=`${i+1}. ${this.kids[gr][i]}\n`;
+                    
+                }
+            }
+            return result;
+        } else {
+            return `No children are enrolled for the trip and the organization of ${this.organizer} falls out...`
+        }
+    }
+    get numberOfChildren(){
+        let numberKids = 0;
+        let children = Object.keys(this.kids);
+        for (let ch of children) {
+            numberKids += this.kids[ch].length;
+        }
+        return numberKids;
+    }
+}

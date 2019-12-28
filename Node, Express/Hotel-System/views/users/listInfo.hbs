@@ -1,0 +1,30 @@
+<form action="/listInfo" method="POST" class="login-form">
+    <input type="text" name="username" placeholder="username" />
+
+   <button type="submit">Search</button>
+</form>
+
+
+{{#each hotels}}
+<a href="/details/{{this._id}}">
+    <fieldset>
+        <legend>{{this.title}}</legend>
+        <p>{{this.location}}</p>
+        <img class="hotelImg" src="{{this.image}}" alt="hotel image">
+        <p>{{this.description}}</p>
+    </fieldset>
+</a>
+{{/each}}
+<div>
+    <br />
+</div>
+
+{{#each comments}}
+<fieldset>
+    <legend>
+        <p>{{this.creator}}</p>
+    </legend>
+    <p>{{this.comment}}</p>
+    <p>{{this.creationDate}}</p>
+</fieldset>
+{{/each}}

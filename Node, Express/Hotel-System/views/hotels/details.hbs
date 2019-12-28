@@ -1,0 +1,47 @@
+<h1>Home Page</h1>
+
+<fieldset>
+    <legend>{{selectedHotel.title}}</legend>
+    <p>{{selectedHotel.location}}</p>
+    <img class="hotelImg" src="{{selectedHotel.image}}" alt="hotel image">
+    <p>{{selectedHotel.description}}</p>
+    <div>
+        {{#if currentUser}}
+        <a href="like/{{selectedHotel._id}}">{{/if}}<img class="likeBtn" src="/img/like-button-png-2.png"
+                alt="like"></a>
+        <span>{{selectedHotel.likes.length}}</span>
+
+        <span>Views: {{selectedHotel.views}}</span>
+    </div>
+
+</fieldset>
+{{#if currentUser}}
+<div class="login-page">
+    <div class="form">
+        <form action="/comment/{{selectedHotel._id}}" method="POST" class="create-form">
+            <input type="text" value="{{selectedHotel.title}}" name='title' placeholder="Title" />
+            <textarea name="comment" id="" cols="35" rows="10" placeholder="comment"></textarea>
+            <br>
+            <button type="submit">create</button>
+        </form>
+    </div>
+</div>
+{{/if}}
+
+
+
+{{#each comments}}
+<fieldset>
+    <legend>
+        <p>{{this.creator}}</p>
+    </legend>
+    <p>{{this.comment}}</p>
+    <p>{{this.creationDate}}</p>
+    {{#if ../isAdmin}}
+    <a href="/edit/comment/{{this._id}}" type="button">Edit</a>
+     <form action="/delete/comment/{{this._id}}" method="post"><button type="submit">Delete</button></form>
+    
+    {{/if}}
+</fieldset>
+
+{{/each}}

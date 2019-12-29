@@ -1,42 +1,42 @@
 <div class="alert alert-dismissible alert-warning">
   <button type="button" class="close" data-dismiss="alert">&times;</button>
   <h4 class="alert-heading">Warning!</h4>
-  <p class="mb-0">Best check yo self, you're not looking too good. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, <a href="#" class="alert-link">vel scelerisque nisl consectetur et</a>.</p>
+  <p class="mb-0">Best check yo self, you're not looking too good. Nulla vitae elit libero, a pharetra augue. Praesent
+    commodo cursus magna, <a href="#" class="alert-link">vel scelerisque nisl consectetur et</a>.</p>
 </div>
 <div class="bs-docs-section log">
-    <div class="col-lg-6">
-        <div class="bs-component">
-
-          
-            <form #form="ngForm" (ngSubmit)="login(form.value)">
-
-              <div class="alert alert-dismissible alert-primary">
-                <fieldset>
-                  <h2>Login</h2>
-                  <div class="form-group">
-                    <p>If you already have a registration you can go ahead, but if you haven't done yet, please go to Register section and make one!</p>
-                    <label for="exampleInputEmail1">User Name</label>
-                    <input ngModel name="username" #userField="ngModel" type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter username" required>
-                    <div *ngIf="userField.touched && userField.errors" class="alert alert-danger">Username is required!</div>
-                    <small id="emailHelp" class="form-text text-muted">Please enter your username!</small>
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input ngModel name="password" #passField="ngModel" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
-                    <div *ngIf="passField.touched && passField.errors" class="alert alert-danger">Password is required!</div>
-                   
-                   <small id="emailHelp" class="form-text text-muted">We'll never share your password with anyone else.</small>
-                   
-                  </div>
-                 
-                 </fieldset>
-             
-                 <button type="submit" class="btn btn-secondary">Login! »»»</button>
+  <div class="col-lg-6">
+    <div class="bs-component">
+      <form [formGroup]="form" (ngSubmit)="login()">
+        <div class="alert alert-dismissible alert-primary">
+          <fieldset>
+            <h2>Login</h2>
+            <div class="form-group">
+              <p>If you already have a registration you can go ahead, but if you haven't done yet, please go to Register
+                section and make one!</p>
+              <label for="exampleInputEmail1">User Name</label>
+              <input formControlName="username" type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter username">
+              <div *ngIf="form.get('username').touched && form.get('username').invalid" class="alert alert-danger">
+              <div *ngIf="form.get('username').errors.required">Username is reqired!</div>
+              <div *ngIf="form.get('username').errors.minlength">Username must be at least 3 characters!</div>
               </div>
-
-
-               
-                 </form>
+              <small id="emailHelp" class="form-text text-muted">Please enter your username!</small>
             </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1"
+                placeholder="Password">
+                <div *ngIf="form.get('password').touched && form.get('password').invalid" class="alert alert-danger">
+                  <div *ngIf="form.get('password').errors.required">Password is reqired!</div>
+                  <div *ngIf="form.get('password').errors.minlength">Password must be at least 6 characters!</div>
+                  </div>
+              <small id="emailHelp" class="form-text text-muted">We'll never share your password with anyone
+                else.</small>
             </div>
+          </fieldset>
+          <button type="submit" class="btn btn-secondary">Login! »»»</button>
+        </div>
+      </form>
     </div>
+  </div>
+</div>

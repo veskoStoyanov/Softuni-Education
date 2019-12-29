@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { MotorService } from '../../services/motor/motor.service';
 
@@ -25,6 +25,7 @@ import { CreateMotorComponent } from './create-motor/create-motor.component';
     CommonModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       {path: 'catalog', component: MotorsComponent},
       {path:'motor/:id', component: MotoDetailsComponent},

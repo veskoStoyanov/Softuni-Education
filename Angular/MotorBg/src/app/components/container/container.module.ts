@@ -5,6 +5,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { FooterComponent } from './footer/footer.component';
 import { RouterModule} from '@angular/router';
 import { AppRoutingModule } from '../../app-routing.module';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { AppRoutingModule } from '../../app-routing.module';
         CommonModule,
         HttpClientModule,
         RouterModule,
-        AppRoutingModule
+        AppRoutingModule,
+        FormsModule
     ],
     providers: [],
     exports: [

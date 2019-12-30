@@ -37,7 +37,7 @@ module.exports = {
                 .then((user) => Promise.all([user, user.matchPassword(password)]))
                 .then(([user, match]) => {
                     if (!match) {
-                        res.status(401).send({ success: false, error: 'There is no such User pleare get Register!' });
+                        res.status(401).send({ success: false});
                         return;
                     }
                     const token = utils.jwt.createToken({ id: user._id });

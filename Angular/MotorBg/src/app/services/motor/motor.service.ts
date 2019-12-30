@@ -6,7 +6,7 @@ import { Motor } from '../../models/Motor';
   providedIn: 'root'
 })
 export class MotorService {
-
+  
   path: string = 'http://localhost:9999/api/motors';
     constructor(private http: HttpClient) {}
 
@@ -31,4 +31,9 @@ export class MotorService {
         headers: this.createUserHeaders()
       })}
      
+      likeMotor(motoId, userId): Observable<Motor> {      
+        return this.http.put<Motor>(`${this.path}/like/${motoId}`, JSON.stringify({userId}), {
+          withCredentials: true,
+          headers: this.createUserHeaders()
+        })}
 }

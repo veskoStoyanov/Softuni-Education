@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormControlName, FormControl, Validators} from '@angular/forms';
-
+import {Router} from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import {MotorService} from '../../../services/motor/motor.service';
 
 @Component({
@@ -17,7 +18,7 @@ export class CreateMotorComponent implements OnInit {
   description: new FormControl('', [Validators.required, Validators.minLength(10)])});
 
   data: Object;
-  constructor(private motorService: MotorService) { }
+  constructor(private motorService: MotorService, private toastr: ToastrService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -31,13 +32,20 @@ export class CreateMotorComponent implements OnInit {
         description: this.form.get('description').value,
         userId: sessionStorage.getItem('userId')
       }
-
-      console.log(this.data);
-      
-
+  
       this.motorService
       .createMotor(this.data)
-      .subscribe(data => {    
-      })
-    } 
+      .subscribe(data => {
+       
+        if (data['success']) {
+          this.toastr.success('Motor was created!', 'Success!');
+          this.router.navigate(['/catalog'])
+        } else {
+          this.toastr.error('Error ocurs please try again!', 'Warning');
+        }
+      },
+      err=> {
+        this.toastr.error('Error ocurs please try again!', 'Warning!');
+      }) 
+    }
 }

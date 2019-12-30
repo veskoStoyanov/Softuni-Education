@@ -35,7 +35,7 @@ export class UserService {
     })}
 
     logout(){
-      return this.http.post(`${this.path}/logout`, { }, {
+      return this.http.post<User>(`${this.path}/logout`, { }, {
         withCredentials: true,
         headers: this.createUserHeaders()
       })}

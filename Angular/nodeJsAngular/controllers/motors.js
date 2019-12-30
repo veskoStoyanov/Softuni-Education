@@ -106,16 +106,21 @@ module.exports = {
         },
 
         like: async (req, res, next) => {
-
+            
             try {
                 const id = req.params.id;
                 const { userId } = req.body;
                 let user = await models.User.findById(userId);
                 let motor = await models.Motor.findById(id);
-                motor.likes.push(user._id);
-
-                await motor.save();
-                res.send({ motor, success: true })
+                if(motor.likes.includes(user._id)) {
+                    res.send({ success: false })
+                    
+                }else {
+                    motor.likes.push(user._id);
+                    await motor.save();
+                    res.send({ motor, success: true })
+                }
+                
             } catch (e) {
                 res.send({ success: false })
                 console.log(e);

@@ -26,11 +26,7 @@ import { CreateMotorComponent } from './create-motor/create-motor.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot([
-      {path: 'catalog', component: MotorsComponent},
-      {path:'motor/:id', component: MotoDetailsComponent},
-      {path:'create/motor', component: CreateMotorComponent},
-    ])],
+  ],
   providers: [MotorService]
 })
 export class CatalogModule { }

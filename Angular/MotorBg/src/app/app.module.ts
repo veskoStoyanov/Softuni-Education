@@ -7,6 +7,10 @@ import { HomeModule } from './components/home/home.module';
 import {CatalogModule} from './components/catalog/catalog.module';
 import {UserModule} from './components/user/user.module';
 import {ContainerModule} from './components/container/container.module';
+import {ToastrModule} from 'ngx-toastr';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+
 
 
 import { AppComponent } from './app.component';
@@ -21,6 +25,8 @@ import { AppComponent } from './app.component';
     CatalogModule,
     UserModule,
     ContainerModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

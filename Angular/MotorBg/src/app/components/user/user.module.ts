@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 import { UserService } from '../../services/user/user.service';
@@ -23,12 +22,8 @@ import { RegisterComponent } from './register/register.component';
         CommonModule,
         HttpClientModule,
         ReactiveFormsModule,
-        FormsModule,
-        RouterModule.forRoot([
-            { path: 'login', component: LoginComponent },
-            { path: 'logout', component: LogoutComponent },
-            { path: 'register', component: RegisterComponent },
-        ])],
+        FormsModule
+    ],
     providers: [UserService]
 })
 export class UserModule { }

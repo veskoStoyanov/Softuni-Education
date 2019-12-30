@@ -36,4 +36,16 @@ export class MotorService {
           withCredentials: true,
           headers: this.createUserHeaders()
         })}
+
+        deleteMotor(motoId): Observable<Motor> {      
+          return this.http.delete<Motor>(`${this.path}/${motoId}`, {
+            withCredentials: true,
+            headers: this.createUserHeaders()
+          })}
+
+          editMotor(data, id): Observable<Motor> {
+            return this.http.put<Motor>(`${this.path}/${id}`, JSON.stringify(data), {
+              withCredentials: true,
+              headers: this.createUserHeaders()
+            })}
 }

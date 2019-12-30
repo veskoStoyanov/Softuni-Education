@@ -2,6 +2,7 @@ import { Component, OnInit, DoCheck } from '@angular/core';
 import { UserService } from '../../../services/user/user.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { DataSharingService } from '../../../services/dataSharingService';
 
 @Component({
   selector: 'app-navigation',
@@ -9,11 +10,18 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./navigation.component.css']
 })
 export class NavigationComponent implements OnInit {
-  isLogged: boolean = false;
+  isUserLoggedIn: boolean;
   constructor(
-    private userService: UserService,
+    public userService: UserService,
     private router: Router,
-    private toastr: ToastrService) { }
+    private toastr: ToastrService,
+    private dataSharingService: DataSharingService
+    ) { 
+
+      this.dataSharingService.isUserLoggedIn.subscribe( value => {
+        this.isUserLoggedIn = value;
+    });
+    }
 
   ngOnInit() {
     
@@ -28,6 +36,7 @@ export class NavigationComponent implements OnInit {
         if (success) {
           window.sessionStorage.clear();
           this.toastr.success('Logged out!', 'Success!')
+          this.dataSharingService.isUserLoggedIn.next(false);
           this.router.navigate(['/']);
         } else {
           this.toastr.error('Error has occurred!', 'Warning!')

@@ -7,6 +7,7 @@ import { AboutComponent } from './components/home/about/about.component';
 import {MotorsComponent} from './components/catalog/motors/motors.component';
 import {CreateMotorComponent} from './components/catalog/create-motor/create-motor.component';
 import { MotoDetailsComponent } from './components/catalog/moto-details/moto-details.component';
+import { MotoEditComponent } from './components/catalog/moto-edit/moto-edit.component';
 
 const routes: Route[] = [
     { path: 'login', component: LoginComponent },
@@ -15,7 +16,8 @@ const routes: Route[] = [
     { path: 'about', component: AboutComponent },
     { path: 'catalog', component:  MotorsComponent},
     { path: 'create/motor', component:  CreateMotorComponent},  
-    { path: 'motor/:id', component:  MotoDetailsComponent},  
+    { path: 'motor/:id', component:  MotoDetailsComponent},
+    { path: 'motor/edit/:id', component:  MotoEditComponent},  
 ]
 
 @NgModule({

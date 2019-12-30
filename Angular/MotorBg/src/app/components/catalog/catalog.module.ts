@@ -8,9 +8,9 @@ import { MotorService } from '../../services/motor/motor.service';
 
 import { MotorsComponent } from './motors/motors.component';
 import { MotoDetailsComponent } from './moto-details/moto-details.component';
-import { SearchComponent } from './search/search.component';
 import { MotorComponent } from './motor/motor.component';
 import { CreateMotorComponent } from './create-motor/create-motor.component';
+import { MotoEditComponent } from './moto-edit/moto-edit.component';
 
 
 @NgModule({
@@ -18,14 +18,15 @@ import { CreateMotorComponent } from './create-motor/create-motor.component';
     MotorsComponent,
     MotorComponent,
     MotoDetailsComponent,
-    SearchComponent,
     CreateMotorComponent,
+    MotoEditComponent,
   ],
   imports: [
     CommonModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    RouterModule
   ],
   providers: [MotorService]
 })

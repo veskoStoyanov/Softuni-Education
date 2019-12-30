@@ -1,25 +1,23 @@
 <div class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
     <div class="container">
-      <a routerLink="/" class="navbar-brand">Home</a>
+      <a *ngIf="!isUserLoggedIn" routerLink="/" class="navbar-brand">Home</a>
+      <a *ngIf="isUserLoggedIn" routerLink="/catalog" class="navbar-brand">Catalog</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav">
-          <li class="nav-item">
+          <li *ngIf="!isUserLoggedIn" class="nav-item">
             <a class="nav-link" routerLink='/login'>Login</a>
           </li>
-          <li class="nav-item">
+          <li *ngIf="!isUserLoggedIn" class="nav-item">
             <a class="nav-link" routerLink='/register'>Register</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link"  (click)="logout()">Logout</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/catalog">Catalog</a>
-          </li>
-          <li class="nav-item">
+          <li *ngIf="isUserLoggedIn && !userService.isUserAdmin()" class="nav-item">
             <a class="nav-link" routerLink="/create/motor">Add Motor</a>
+          </li>
+          <li *ngIf="isUserLoggedIn" class="nav-item">
+            <a class="nav-link"  (click)="logout()">Logout</a>
           </li>
         </ul>
       </div>   

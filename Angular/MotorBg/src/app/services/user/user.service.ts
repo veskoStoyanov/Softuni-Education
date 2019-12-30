@@ -9,7 +9,7 @@ import { User } from 'src/app/models/User';
   providedIn: 'root'
 })
 export class UserService {
-
+roles: any;
   path: string = 'http://localhost:9999/api/user';
 
   constructor(private http: HttpClient) { }
@@ -39,4 +39,27 @@ export class UserService {
         withCredentials: true,
         headers: this.createUserHeaders()
       })}
+
+      getToken() {
+        
+      }
+
+      isAuth(): boolean {
+        return window.sessionStorage.getItem('token') !== null;
+      }
+
+      isUserAdmin () {
+        this.roles = window.sessionStorage.getItem('roles')
+        if (!this.roles) {
+          return false
+        }
+         
+        this.roles = this.roles.split()
+        if (this.roles.includes('Admin')) {  
+        
+          return true
+        }
+    
+        return false
+      }
 }

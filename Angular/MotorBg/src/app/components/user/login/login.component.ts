@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControlName, FormControl, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
 
 import { UserService } from '../../../services/user/user.service';
 import { User } from 'src/app/models/User';
+import { DataSharingService } from '../../../services/dataSharingService';;
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,12 @@ export class LoginComponent implements OnInit {
     password: new FormControl('', [Validators.required, Validators.minLength(6)])
   });
   alert: any = null;
-  constructor(private userService: UserService, private toastr: ToastrService, private router: Router) { }
+  constructor(
+    private userService: UserService,
+    private toastr: ToastrService,
+    private router: Router,
+    private dataSharingService: DataSharingService
+  ) { }
 
   ngOnInit() {
   }
@@ -39,15 +45,16 @@ export class LoginComponent implements OnInit {
       .subscribe(data => {
         this.authenticateUser(data);
         if (data['success']) {
+          this.dataSharingService.isUserLoggedIn.next(true);
           this.toastr.success('Logged In!', 'Success!');
           this.router.navigate(['/catalog'])
         } else {
           this.toastr.error('Error ocurs please try again!', 'Warning')
         }
       },
-      err=> {
-        this.toastr.error('Error ocurs please try again!', 'Warning!')
-      }) 
+        err => {
+          this.toastr.error('Error ocurs please try again!', 'Warning!')
+        })
   }
 
 }

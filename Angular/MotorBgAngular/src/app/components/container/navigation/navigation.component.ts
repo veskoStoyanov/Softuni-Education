@@ -3,6 +3,7 @@ import { UserService } from '../../../services/user/user.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { DataSharingService } from '../../../services/dataSharingService';
+import {Auth} from '../../../services/auth';
 
 @Component({
   selector: 'app-navigation',
@@ -15,7 +16,8 @@ export class NavigationComponent implements OnInit {
     public userService: UserService,
     private router: Router,
     private toastr: ToastrService,
-    private dataSharingService: DataSharingService
+    private dataSharingService: DataSharingService,
+    public auth: Auth
     ) { 
 
       this.dataSharingService.isUserLoggedIn.subscribe( value => {
@@ -32,7 +34,6 @@ export class NavigationComponent implements OnInit {
       .logout()
       .subscribe(success => {
 
-
         if (success) {
           window.sessionStorage.clear();
           this.toastr.success('Logged out!', 'Success!')
@@ -40,10 +41,8 @@ export class NavigationComponent implements OnInit {
           this.router.navigate(['/']);
         } else {
           this.toastr.error('Error has occurred!', 'Warning!')
-        }
-      },
+        }},
         err => {
           this.toastr.error('Error has occurred!', 'Warning!');
-        })
-  }
+        })}
 }

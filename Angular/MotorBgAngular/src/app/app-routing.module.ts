@@ -8,6 +8,8 @@ import {MotorsComponent} from './components/catalog/motors/motors.component';
 import {CreateMotorComponent} from './components/catalog/create-motor/create-motor.component';
 import { MotoDetailsComponent } from './components/catalog/moto-details/moto-details.component';
 import { MotoEditComponent } from './components/catalog/moto-edit/moto-edit.component';
+import { VideoAdminPanelComponent } from './components/video/video-admin-panel/video-admin-panel.component';
+import { PlayVideoComponent } from './components/video/play-video/play-video.component';
 
 const routes: Route[] = [
     { path: 'login', component: LoginComponent },
@@ -18,6 +20,8 @@ const routes: Route[] = [
     { path: 'create/motor', component:  CreateMotorComponent},  
     { path: 'motor/:id', component:  MotoDetailsComponent},
     { path: 'motor/edit/:id', component:  MotoEditComponent},  
+    { path: 'video/panel', component:  VideoAdminPanelComponent}, 
+    { path: 'videos', component:  PlayVideoComponent}, 
 ]
 
 @NgModule({

@@ -1,0 +1,12 @@
+<div class="container">
+
+  <h1 class="text-center title">Video List</h1>
+    
+    <ul *ngFor="let video of videos" class="list-group">
+        <h3 class="mb-1 text-center">{{video.model}}</h3>
+        <div class=" div embed-responsive embed-responsive-16by9">
+        <iframe *ngIf="video" class="embed-responsive-item" [src]="video.url | safe"> </iframe>
+        </div> 
+           
+</ul>
+</div>

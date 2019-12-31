@@ -10,6 +10,7 @@ import {UserModule} from './components/user/user.module';
 import {ContainerModule} from './components/container/container.module';
 import {ToastrModule} from 'ngx-toastr';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {VideoModule} from './components/video/video.module'
 
 
 
@@ -27,7 +28,8 @@ import { AppComponent } from './app.component';
     UserModule,
     ContainerModule,
     ToastrModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    VideoModule
   ],
   providers: [DataSharingService],
   bootstrap: [AppComponent]

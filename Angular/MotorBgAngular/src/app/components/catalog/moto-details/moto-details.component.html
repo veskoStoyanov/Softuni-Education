@@ -21,8 +21,8 @@
       <a  href="#" target="_blank" class="btn btn-default">See what the weather in {{singleMotor.city}} will be like!</a>   
 
   </div>
-  <div>  <a *ngIf="!isCreator && !isUserAdmin" (click)=like() class="btn btn-outline-danger a-btn">Like it!</a>
-  <a *ngIf="isUserAdmin" (click)=delete() class="btn btn-outline-danger a-btn">Delete</a></div>
+  <div>  <a *ngIf="!isCreator && !auth.isUserAdmin()" (click)=like() class="btn btn-outline-danger a-btn">Like it!</a>
+  <a *ngIf="auth.isUserAdmin()" (click)=delete() class="btn btn-outline-danger a-btn">Delete</a></div>
   <a *ngIf="isCreator" routerLink='/motor/edit/{{singleMotor._id}}' class="btn btn-outline-danger a-btn">Edit</a>
   <div class="card-footer text-muted">
  

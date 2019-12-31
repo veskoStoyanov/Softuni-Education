@@ -5,11 +5,6 @@ const { String, Number, Boolean, ObjectId } = Schema.Types;
 
 const motorSchema = new Schema({
 
-    isBanned: {
-        type: Boolean,
-        default: false,
-    },
-
     description: {
         type: String,
         required: true,
@@ -45,6 +40,5 @@ const motorSchema = new Schema({
         ref: 'User'
     }]
 });
-
 
 module.exports = new Model('Motor', motorSchema);

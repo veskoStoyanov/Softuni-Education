@@ -13,8 +13,14 @@
           <li *ngIf="!isUserLoggedIn" class="nav-item">
             <a class="nav-link" routerLink='/register'>Register</a>
           </li>
-          <li *ngIf="isUserLoggedIn && !userService.isUserAdmin()" class="nav-item">
+          <li *ngIf="isUserLoggedIn && !auth.isUserAdmin()" class="nav-item">
             <a class="nav-link" routerLink="/create/motor">Add Motor</a>
+          </li>
+          <li *ngIf="isUserLoggedIn && auth.isUserAdmin()" class="nav-item">
+            <a class="nav-link" routerLink="/video/panel">Video Panel</a>
+          </li>
+          <li *ngIf="isUserLoggedIn && !auth.isUserAdmin()" class="nav-item">
+            <a class="nav-link" routerLink="/videos">Video</a>
           </li>
           <li *ngIf="isUserLoggedIn" class="nav-item">
             <a class="nav-link"  (click)="logout()">Logout</a>

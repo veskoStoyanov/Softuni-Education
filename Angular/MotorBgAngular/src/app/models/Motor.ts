@@ -1,12 +1,11 @@
 
 export interface Motor {
-    _id: number;
-    isBanned: boolean;
+    _id: any;
     likes: Array<string>;
     image: string;
     model: string;
     description: string;
     price: number;
     city: string;
-    creator: string; 
+    creator: any; 
 }

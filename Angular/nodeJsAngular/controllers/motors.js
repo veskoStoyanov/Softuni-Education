@@ -77,34 +77,6 @@ module.exports = {
             }
         },
 
-        banIt: async (req, res, next) => {
-            try {
-                const id = req.params.id;
-
-                let motor = await models.Motor.findById(id)
-                motor.isBanned = true;
-                await motor.save();
-                res.send({ motor, success: true })
-            } catch (e) {
-                res.send({ success: false })
-                console.log(e);
-            }
-        },
-
-        unban: async (req, res, next) => {
-            try {
-                const id = req.params.id;
-
-                let motor = await models.Motor.findById(id)
-                motor.isBanned = false;
-                await motor.save();
-                res.send({ motor, success: true })
-            } catch (e) {
-                res.send({ success: false })
-                console.log(e);
-            }
-        },
-
         like: async (req, res, next) => {
             
             try {
@@ -137,7 +109,6 @@ module.exports = {
         } catch (e) {
             res.send({ success: false })
             console.log(e);
-
         }
     }
 };

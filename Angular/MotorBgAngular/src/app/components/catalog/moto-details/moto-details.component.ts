@@ -4,6 +4,7 @@ import { MotorService } from '../../../services/motor/motor.service';
 import {UserService} from '../../../services/user/user.service';
 import { Motor } from '../../../models/Motor';
 import { ToastrService } from 'ngx-toastr';
+import {Auth} from '../../../services/auth';
 
 
 @Component({
@@ -15,14 +16,14 @@ export class MotoDetailsComponent implements OnInit {
   singleMotor: Motor;
   userId: string = window.sessionStorage.getItem('userId');
   isCreator: boolean;
-  isUserAdmin: boolean;
 
   constructor(
     private route: ActivatedRoute,
     private motorService: MotorService,
     private toastr: ToastrService,
     private router: Router,
-    private userService: UserService
+    private userService: UserService,
+    public auth: Auth
   ) { }
 
   ngOnInit() {
@@ -34,7 +35,6 @@ export class MotoDetailsComponent implements OnInit {
         .subscribe(data => {
           this.singleMotor = data;
           this.isCreator = this.singleMotor.creator.toString() === this.userId;
-          this.isUserAdmin = this.userService.isUserAdmin()
         })
 
     });

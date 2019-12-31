@@ -20,4 +20,19 @@ export class VideoService {
   getVideos(): Observable<Array<Video>> {
     return this.http.get<Array<Video>>(`${this.path}`);
   }
+
+  deleteVideo(videoId): Observable<Video> {
+    return this.http.delete<Video>(`${this.path}/${videoId}`, {
+      withCredentials: true,
+      headers: this.createUserHeaders()
+    })
+  }
+
+  createVideo(data): Observable<Video> {
+    return this.http.post<Video>(`${this.path}`, JSON.stringify(data), {
+      withCredentials: true,
+      headers: this.createUserHeaders()
+    })
+  }
+
 }

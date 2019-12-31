@@ -11,11 +11,12 @@ import {MotorService} from '../../../services/motor/motor.service';
 })
 export class CreateMotorComponent implements OnInit {
   form = new FormGroup({
-  city:  new FormControl('', [Validators.required]),
-  model: new FormControl('', [Validators.required, Validators.minLength(3)]),
-  image: new FormControl('', [Validators.required, Validators.minLength(5)]),
-  price: new FormControl('', [Validators.required]),
-  description: new FormControl('', [Validators.required, Validators.minLength(10)])});
+    city: new FormControl('', [Validators.required]),
+    model: new FormControl('', [Validators.required, Validators.minLength(2)]),
+    image: new FormControl('', [Validators.required, Validators.minLength(5)]),
+    price: new FormControl('', [Validators.required]),
+    description: new FormControl('', [Validators.required, Validators.minLength(10)])
+});
 
   data: Object;
   constructor(private motorService: MotorService, private toastr: ToastrService, private router: Router) { }

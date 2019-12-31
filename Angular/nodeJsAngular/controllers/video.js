@@ -60,16 +60,11 @@ module.exports = {
         const id = req.params.id;
 
         try {
-            let comments = await models.Comment.find();
-            comments = comments.filter(any => any.videoId.toString() === id)
-
-            for (const com of comments) {
-                await models.Comment.deleteOne({ _id: com._id });
-            }
-
+           
             let video = await models.Video.deleteOne({ _id: id });
             res.send({video, success: true});
         } catch (e) {
+            res.send({video, success: false});
             console.log(e);
 
         }

@@ -1,5 +1,10 @@
 import {NgModule} from '@angular/core';
 import {Route, RouterModule} from '@angular/router';
+import { AuthenticatedRoute } from './services/authenticated-routs/authenticated-routs.service';
+import {AuthenticatedRouteAdmin} from './services/authenticated-routs/authenticated-routes-admin.servise';
+import {AuthenticatedRouteUser} from './services/authenticated-routs/authenticated-routes-user.servise'
+import {AuthenticatedRouteGest} from './services/authenticated-routs/authenticated-routes-gest.servise';
+
 import {LoginComponent} from './components/user/login/login.component';
 import {RegisterComponent} from './components/user/register/register.component';
 import { HomeComponent } from './components/home/home/home.component';
@@ -11,22 +16,27 @@ import { MotoEditComponent } from './components/catalog/moto-edit/moto-edit.comp
 import { VideoAdminPanelComponent } from './components/video/video-admin-panel/video-admin-panel.component';
 import { PlayVideoComponent } from './components/video/play-video/play-video.component';
 
+
 const routes: Route[] = [
-    { path: 'login', component: LoginComponent },
-    { path: 'register', component: RegisterComponent },
-    { path: '', component: HomeComponent },
+    { path: 'login', component: LoginComponent, canActivate: [AuthenticatedRouteGest] },
+    { path: 'register', component: RegisterComponent, canActivate: [AuthenticatedRouteGest] },
+    { path: '', component: HomeComponent, canActivate: [AuthenticatedRouteGest] },
     { path: 'about', component: AboutComponent },
-    { path: 'catalog', component:  MotorsComponent},
-    { path: 'create/motor', component:  CreateMotorComponent},  
-    { path: 'motor/:id', component:  MotoDetailsComponent},
-    { path: 'motor/edit/:id', component:  MotoEditComponent},  
-    { path: 'video/panel', component:  VideoAdminPanelComponent}, 
-    { path: 'videos', component:  PlayVideoComponent}, 
+    { path: 'catalog', component:  MotorsComponent, canActivate: [AuthenticatedRoute]},
+    { path: 'create/motor', component:  CreateMotorComponent, canActivate: [AuthenticatedRoute, AuthenticatedRouteUser]},  
+    { path: 'motor/:id', component:  MotoDetailsComponent, canActivate: [AuthenticatedRoute]},
+    { path: 'motor/edit/:id', component:  MotoEditComponent, canActivate: [AuthenticatedRoute, AuthenticatedRouteUser]},  
+    { path: 'video/panel', component:  VideoAdminPanelComponent, canActivate: [AuthenticatedRoute, AuthenticatedRouteAdmin]}, 
+    { path: 'videos', component:  PlayVideoComponent, canActivate: [AuthenticatedRoute]},
 ]
 
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule]
+    exports: [RouterModule],
+    providers: [AuthenticatedRoute,
+        AuthenticatedRouteAdmin,
+        AuthenticatedRouteUser,
+        AuthenticatedRouteGest]
 })
 export class AppRoutingModule {
 

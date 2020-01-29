@@ -16,7 +16,18 @@ export class Auth {
     }
 
     isAuth(): boolean {
-        return window.sessionStorage.getItem('token') !== null;
+        return window.sessionStorage.getItem('authToken') !== null;
+    }
+
+    isGest(): boolean {
+        return window.sessionStorage.getItem('authToken') === null;
+    }
+
+    isUserOnly(): boolean {
+        if (this.isAuth() && !this.isUserAdmin()) {
+            return true
+        }
+        return false
     }
 
     isUserAdmin(): boolean {

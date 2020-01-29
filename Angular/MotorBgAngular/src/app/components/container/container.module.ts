@@ -6,12 +6,14 @@ import { FooterComponent } from './footer/footer.component';
 import { RouterModule} from '@angular/router';
 import { AppRoutingModule } from '../../app-routing.module';
 import {FormsModule} from '@angular/forms';
+import { NoAuthenticatedComponent } from './no-authenticated/no-authenticated.component';
 
 
 @NgModule({
     declarations: [
         NavigationComponent,
         FooterComponent,
+        NoAuthenticatedComponent,
     ],
     imports: [
         CommonModule,

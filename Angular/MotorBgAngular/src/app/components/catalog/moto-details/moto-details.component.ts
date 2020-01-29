@@ -14,7 +14,6 @@ import {Auth} from '../../../services/auth';
 })
 export class MotoDetailsComponent implements OnInit {
   singleMotor: Motor;
-  userId: string = window.sessionStorage.getItem('userId');
   isCreator: boolean;
 
   constructor(
@@ -34,7 +33,7 @@ export class MotoDetailsComponent implements OnInit {
         .getSingleMotor(id)
         .subscribe(data => {
           this.singleMotor = data;
-          this.isCreator = this.singleMotor.creator.toString() === this.userId;
+          this.isCreator = this.singleMotor.creator.toString() === this.auth.getUserId();
         })
 
     });
@@ -42,7 +41,7 @@ export class MotoDetailsComponent implements OnInit {
 
   like() {
     this.motorService
-      .likeMotor(this.singleMotor._id, this.userId)
+      .likeMotor(this.singleMotor._id, this.auth.getUserId())
       .subscribe(success => {
         if (success['success']) {
           this.toastr.success('Motor was liked!', 'Success!');

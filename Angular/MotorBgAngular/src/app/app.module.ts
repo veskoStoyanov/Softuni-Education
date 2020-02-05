@@ -12,13 +12,11 @@ import {ToastrModule} from 'ngx-toastr';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {VideoModule} from './components/video/video.module'
 
-
-
-
 import { AppComponent } from './app.component';
+import { ChatRoomComponent } from './components/chat-room/chat-room.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ChatRoomComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

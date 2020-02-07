@@ -23,7 +23,8 @@
 
 <ul  *ngFor="let video of videos" class="videos list-group">
 
-    <li class="list-group-item">
+    <li  [@state] class="list-group-item">
+       
     <h5 class="mb-1">{{video.model}}</h5>
         <span class="float-right">
             <button (click)="deleteVideo(video['_id'])" class="btn btn-danger">Delete</button>

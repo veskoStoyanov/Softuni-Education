@@ -10,8 +10,6 @@ import { VideoAdminPanelComponent } from './video-admin-panel/video-admin-panel.
 import { PlayVideoComponent } from './play-video/play-video.component';
 import { SafePipe } from './savePipe/savePipe';
 
-
-
 @NgModule({
   declarations: [VideoAdminPanelComponent, PlayVideoComponent, SafePipe],
   imports: [
@@ -19,7 +17,7 @@ import { SafePipe } from './savePipe/savePipe';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
   ],
   providers: [VideoService]
 })

@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
+
 import {DataSharingService} from './services/dataSharingService';
 
 import { HomeModule } from './components/home/home.module';
@@ -13,10 +14,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {VideoModule} from './components/video/video.module'
 
 import { AppComponent } from './app.component';
-import { ChatRoomComponent } from './components/chat-room/chat-room.component';
 
 @NgModule({
-  declarations: [AppComponent, ChatRoomComponent],
+  declarations: [AppComponent,],
   imports: [
     BrowserModule,
     AppRoutingModule,

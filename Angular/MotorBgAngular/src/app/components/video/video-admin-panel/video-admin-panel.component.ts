@@ -5,11 +5,28 @@ import { ToastrService } from 'ngx-toastr';
 import { VideoService } from '../../../services/video/video.service';
 import { Auth } from '../../../services/auth';
 import { Video } from '../../../models/Video';
+import { trigger,
+  state,
+  animation,
+  transition,
+  animate,
+  style
+ } from '@angular/animations';
 
 @Component({
   selector: 'app-video-admin-panel',
   templateUrl: './video-admin-panel.component.html',
-  styleUrls: ['./video-admin-panel.component.css']
+  styleUrls: ['./video-admin-panel.component.css'],
+  animations: [
+    trigger('state', [
+      transition('void => *', [
+        style({
+          opacity: -10,
+          transform: 'translateX(-200px)'
+        }), animate(1000)
+      ])
+    ])
+  ]
 })
 export class VideoAdminPanelComponent implements OnInit {
   baseUrl: string = 'https://www.youtube.com/embed/';

@@ -15,7 +15,6 @@ import { MotoDetailsComponent } from './components/catalog/moto-details/moto-det
 import { MotoEditComponent } from './components/catalog/moto-edit/moto-edit.component';
 import { VideoAdminPanelComponent } from './components/video/video-admin-panel/video-admin-panel.component';
 import { PlayVideoComponent } from './components/video/play-video/play-video.component';
-import {ChatRoomComponent} from './components/chat-room/chat-room.component';
 
 
 const routes: Route[] = [
@@ -29,7 +28,6 @@ const routes: Route[] = [
     { path: 'motor/edit/:id', component:  MotoEditComponent, canActivate: [AuthenticatedRoute, AuthenticatedRouteUser]},  
     { path: 'video/panel', component:  VideoAdminPanelComponent, canActivate: [AuthenticatedRoute, AuthenticatedRouteAdmin]}, 
     { path: 'videos', component:  PlayVideoComponent, canActivate: [AuthenticatedRoute]},
-    { path: 'chat', component:  ChatRoomComponent,}
 ]
 
 @NgModule({

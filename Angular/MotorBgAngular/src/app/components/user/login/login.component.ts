@@ -5,7 +5,6 @@ import { Router } from '@angular/router';
 
 import { UserService } from '../../../services/user/user.service';
 import { User } from 'src/app/models/User';
-import { DataSharingService } from '../../../services/dataSharingService';;
 
 @Component({
   selector: 'app-login',
@@ -22,7 +21,6 @@ export class LoginComponent implements OnInit {
     private userService: UserService,
     private toastr: ToastrService,
     private router: Router,
-    private dataSharingService: DataSharingService
   ) { }
 
   ngOnInit() {
@@ -45,7 +43,6 @@ export class LoginComponent implements OnInit {
       .subscribe(data => {
         this.authenticateUser(data);
         if (data['success']) {
-          this.dataSharingService.isUserLoggedIn.next(true);
           this.toastr.success('Logged In!', 'Success!');
           this.router.navigate(['/catalog'])
         } else {

@@ -1,9 +1,10 @@
-import { Component, OnInit, DoCheck } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { UserService } from '../../../services/user/user.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { DataSharingService } from '../../../services/dataSharingService';
-import {Auth} from '../../../services/auth';
+import { Auth } from '../../../services/auth';
+import { Store } from '@ngrx/store';
+import { AppState } from 'src/app/store/app.state';
 
 @Component({
   selector: 'app-navigation',
@@ -11,22 +12,26 @@ import {Auth} from '../../../services/auth';
   styleUrls: ['./navigation.component.css']
 })
 export class NavigationComponent implements OnInit {
-  isUserLoggedIn: boolean;
+  isUserLoggedIn: boolean = false;
   constructor(
     public userService: UserService,
     private router: Router,
     private toastr: ToastrService,
-    private dataSharingService: DataSharingService,
-    public auth: Auth
-    ) { 
-
-      this.dataSharingService.isUserLoggedIn.subscribe( value => {
-        this.isUserLoggedIn = value;
-    });
-    }
+    public auth: Auth,
+    private store: Store<AppState>
+  ) { }
 
   ngOnInit() {
-    
+    this.store.select('user')
+      .subscribe(res => {
+        if(res._id !== '') {
+          this.isUserLoggedIn = true;
+        }
+      });
+
+      console.log(this.isUserLoggedIn);
+      
+     
   }
 
   logout() {
@@ -37,12 +42,13 @@ export class NavigationComponent implements OnInit {
         if (success) {
           window.sessionStorage.clear();
           this.toastr.success('Logged out!', 'Success!')
-          this.dataSharingService.isUserLoggedIn.next(false);
           this.router.navigate(['/']);
         } else {
           this.toastr.error('Error has occurred!', 'Warning!')
-        }},
+        }
+      },
         err => {
           this.toastr.error('Error has occurred!', 'Warning!');
-        })}
+        })
+  }
 }

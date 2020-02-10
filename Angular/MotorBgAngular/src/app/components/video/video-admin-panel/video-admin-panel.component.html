@@ -1,5 +1,5 @@
 <form [formGroup]="form" (ngSubmit)="createVideo()" class="video text-center border border-light p-5">
-    <h1>Add lecture to course Express</h1>
+    <h1>Add a Video to Data Base!</h1>
 
     <div class="form-group">
         <label for="title">Video Model</label>
@@ -19,9 +19,9 @@
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
-<h2 *ngIf="videos" class="text-center">There are {{videos.length}} videos in the data base!</h2>
+<h2 *ngIf="videos" class="text-center">These are all available videos in the data base!</h2>
 
-<ul  *ngFor="let video of videos" class="videos list-group">
+<ul  *ngFor="let video of videos | async" class="videos list-group">
 
     <li  [@state] class="list-group-item">
        

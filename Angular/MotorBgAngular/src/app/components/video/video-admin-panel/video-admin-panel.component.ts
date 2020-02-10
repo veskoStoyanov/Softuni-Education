@@ -5,13 +5,17 @@ import { ToastrService } from 'ngx-toastr';
 import { VideoService } from '../../../services/video/video.service';
 import { Auth } from '../../../services/auth';
 import { Video } from '../../../models/Video';
-import { trigger,
+import {
+  trigger,
   state,
   animation,
   transition,
   animate,
   style
- } from '@angular/animations';
+} from '@angular/animations';
+import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { AppState } from 'src/app/store/app.state';
 
 @Component({
   selector: 'app-video-admin-panel',
@@ -28,26 +32,24 @@ import { trigger,
     ])
   ]
 })
+
 export class VideoAdminPanelComponent implements OnInit {
   baseUrl: string = 'https://www.youtube.com/embed/';
-  videos: Array<Video>;
+  videos: Observable<Video[]>;
   data: Object;
   form = new FormGroup({
-    url:  new FormControl('', [Validators.required, Validators.minLength(5)]),
-  model: new FormControl('', [Validators.required, Validators.minLength(2)])
+    url: new FormControl('', [Validators.required, Validators.minLength(5)]),
+    model: new FormControl('', [Validators.required, Validators.minLength(2)])
   });
 
   constructor(private videoService: VideoService,
     private toastr: ToastrService,
     private router: Router,
-    public auth: Auth) { }
+    public auth: Auth,
+    private store: Store<AppState>) { }
 
   ngOnInit() {
-    this.videoService
-      .getVideos()
-      .subscribe(data => {
-        this.videos = data;
-      })
+    this.videos = this.store.select('videos');
   }
 
   deleteVideo(videoId) {
@@ -67,28 +69,26 @@ export class VideoAdminPanelComponent implements OnInit {
         })
   }
 
-  createVideo () {
+  createVideo() {
     this.data = {
       url: this.baseUrl + this.form.get('url').value.split('=')[1],
       model: this.form.get('model').value,
     }
 
-
     this.videoService
-    .createVideo(this.data)
-    .subscribe(data => {
-      if (data['success']) {
-        this.toastr.success('Video was created!', 'Success!');
-        this.form.reset();
-        this.ngOnInit();
-    
-      } else {
-        this.toastr.error('Error ocurs please try again!', 'Warning');
-      }
-    },
-    err=> {
-      this.toastr.error('Error ocurs please try again!', 'Warning!');
-    }) 
-    
+      .createVideo(this.data)
+      .subscribe(data => {
+        if (data['success']) {
+          this.toastr.success('Video was created!', 'Success!');
+          this.form.reset();
+          this.ngOnInit();
+
+        } else {
+          this.toastr.error('Error ocurs please try again!', 'Warning');
+        }
+      },
+        err => {
+          this.toastr.error('Error ocurs please try again!', 'Warning!');
+        })
   }
 }

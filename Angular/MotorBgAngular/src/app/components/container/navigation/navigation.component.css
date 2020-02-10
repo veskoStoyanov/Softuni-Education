@@ -1,3 +1,7 @@
 .con {
     position: relative; left: 75%;
 }
+
+.logout {
+     cursor: pointer; 
+}

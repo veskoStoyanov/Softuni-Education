@@ -1,0 +1,51 @@
+01. Records’ Count
+SELECT COUNT(*)
+FROM wizzard_deposits
+
+02. Longest Magic Wand
+SELECT MAX(magic_wand_size)
+FROM wizzard_deposits
+AS longest_magix_wand;
+
+03. Longest Magic Wand per Deposit Groups
+SELECT deposit_group,
+MAX(magic_wand_size)
+AS longest_magic_wand
+FROM wizzard_deposits
+GROUP BY deposit_group 
+ORDER BY longest_magic_wand,
+deposit_group;
+
+05. Deposits Sum
+SELECT deposit_group, SUM(deposit_amount) AS total_sum
+FROM wizzard_deposits
+GROUP BY deposit_group
+ORDER BY total_sum;
+
+06. Appetizers Count
+SELECT COUNT(category_id)
+FROM products
+WHERE category_id = 2 and
+price > 8;
+
+07. Menu Prices
+SELECT category_id,
+ROUND(AVG(price), 2)
+AS `Average price`,
+ROUND(MIN(price), 2) AS `Cheapest Product`,
+ROUND(MAX(price), 2) AS `Most Expensive Product`
+FROM products
+GROUP BY category_id
+
+08. Employee Address
+SELECT e.employee_id, e.job_title,
+ a.address_id, a.address_text
+ FROM employees e
+ INNER JOIN addresses a 
+ ON e.address_id = a.address_id
+ ORDER BY a.address_id
+ LIMIT 5;
+ 
+ 
+
+

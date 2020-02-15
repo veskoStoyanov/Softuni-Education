@@ -1,0 +1,129 @@
+01. Create Tables
+CREATE TABLE `minions`(
+`id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+`name` VARCHAR(50) NOT NULL,
+`age` INT NOT NULL DEFAULT '0',
+`town_id` INT NOT NULL DEFAULT '0');
+
+CREATE TABLE `towns`(
+`id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+`name` VARCHAR(50) NOT NULL);
+
+02. Insert Records in Both Tables
+INSERT INTO towns (`id`,`name`) VALUES
+(1,'Sofia'),
+(2, 'Plovdiv'),
+(3, 'Varna');
+INSERT INTO minions(`id`,`name`, `age`, `town_id`) VALUES
+(1,'Kevin', 22, 1),
+(2,'Bob', 15, 3),
+(3,'Steward', NULL, 2);
+
+03. Truncate Table Minions
+TRUNCATE minions;
+
+04. Drop All Tables
+DROP table minions, towns;
+
+08. Find All Information About Departments
+SELECT * FROM departments
+ORDER BY department_id
+
+09. Find all Department Names
+SELECT name FROM departments
+ORDER BY department_id;
+
+10. Find Salary of Each Employee
+SELECT `first_name`, `last_name`, `salary` FROM employees
+ORDER BY employee_id;
+
+11. Find Full Name of Each Employee
+SELECT `first_name`, `middle_name`, `last_name` FROM employees
+ORDER BY employee_id;
+
+12. Find Email Address of Each Employee
+SELECT CONCAT(`first_name`, '.', `last_name`, '@softuni.bg') AS full_email_address FROM employees;
+
+13. Find All Different Employee’s Salaries
+SELECT DISTINCT(salary)
+FROM employees
+ORDER BY salary;
+
+14. Find all Information About Employees
+SELECT *
+FROM employees
+WHERE job_title = 'Sales Representative';
+
+15. Find Names of All Employees by Salary in Range
+SELECT `first_name`, `last_name`, `job_title`
+FROM employees
+WHERE `salary` >= 20000 AND salary <= 30000
+ORDER BY `employee_id`;
+
+16. Find Names of All Employees
+SELECT CONCAT(`first_name`, ' ', `middle_name`, ' ', `last_name`) AS `full_name`
+FROM employees
+WHERE `salary` IN(25000, 14000, 12500, 23600);
+
+17. Find All Employees Without Manager
+SELECT `first_name`, `last_name`
+FROM employees
+WHERE `manager_id` IS NULL;
+
+18. Find All Employees with Salary More Than
+SELECT first_name, last_name, salary 
+FROM employees
+WHERE salary > 50000
+ORDER BY salary desc;
+
+19. Find 5 Best Paid Employees
+SELECT first_name, last_name
+FROM employees
+ORDER BY salary DESC
+LIMIT 5;
+
+20. Find All Employees Except Marketing
+SELECT first_name, last_name FROM employees
+WHERE department_id != 4;
+
+21. Sort Employees Table
+SELECT * FROM employees
+ORDER BY salary DESC,
+ first_name,
+ last_name DESC,
+ middle_name;
+ 
+ 22. Distinct Job Titles
+ SELECT DISTINCT(job_title)
+FROM employees
+ORDER BY job_title;
+
+23. Find First 10 Started Projects
+SELECT * FROM projects
+ORDER BY start_date,
+`name`,
+project_id
+LIMIT 10;
+
+24. Last 7 Hired Employees
+SELECT first_name, last_name, hire_date
+FROM employees
+ORDER BY hire_date DESC
+LIMIT 7;
+
+25. Increase Salaries
+UPDATE employees
+SET salary = salary * 1.12
+WHERE department_id IN(1, 2, 4, 11);
+
+SELECT salary
+FROM employees
+WHERE department_id IN(1, 2, 4, 11);
+
+28. Countries and Currency (Euro / Not Euro )
+SELECT country_name, country_code, IF (currency_code = 'EUR',
+'Euro', 'Not Euro') AS currency
+FROM countries
+ORDER BY country_name ASC;
+​
+

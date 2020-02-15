@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2c361a33-9a7a-49c0-a810-ccb481a5d11b" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="myPHP" />
+  <component name="ProjectId" id="1XQgLe1GVMObN9FZ4JEm1wLe6ks" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../EasterGifts" />
+  </component>
+  <component name="RunManager">
+    <configuration name="solve.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/solve.php">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHP Script.solve.php" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2c361a33-9a7a-49c0-a810-ccb481a5d11b" name="Default Changelist" comment="" />
+      <created>1580983678012</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1580983678012</updated>
+      <workItem from="1580983679397" duration="939000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="390" y="0" key="#PHP" timestamp="1580983770265">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="390" y="0" key="#PHP/0.0.1366.728@0.0.1366.728" timestamp="1580983770265" />
+    <state x="402" y="53" key="#solve.php" timestamp="1580983772003">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="402" y="53" key="#solve.php/0.0.1366.728@0.0.1366.728" timestamp="1580983772003" />
+    <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1580984617295">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1580984617295" />
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1580984618486">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1580984618486" />
+    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1580984618485">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1580984618485" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1580984618484">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1580984618484" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1580984618485">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1580984618485" />
+  </component>
+</project>

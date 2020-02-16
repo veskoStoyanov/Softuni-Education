@@ -1,0 +1,86 @@
+01. Find Names of All Employees by First Name
+SELECT first_name, last_name
+FROM employees
+WHERE SUBSTRING(first_name, 1, 2) = 'Sa';
+
+02. Find Names of All Employees by Last Name
+SELECT first_name, last_name
+FROM employees
+WHERE LOCATE('ei', last_name);
+
+03. Find First Names of All Employess
+SELECT first_name
+FROM employees
+WHERE	department_id IN(3, 10) AND 
+substring(hire_date, 1, 10) BETWEEN 1995 AND 2005
+ORDER BY employee_id;
+
+04. Find All Employees Except Engineers
+SELECT first_name, last_name
+FROM employees
+WHERE LOCATE('engineer', job_title) =0;
+
+05. Find Towns with Name Length
+SELECT NAME
+FROM towns
+WHERE CHAR_LENGTH(NAME) IN(5, 6)
+ORDER BY `name`;
+
+06. Find Towns Starting With
+SELECT * FROM towns
+WHERE SUBSTRING(NAME, 1, 1) = 'M' OR 
+SUBSTRING(name, 1, 1) = 'K' OR 
+SUBSTRING(name, 1, 1) = 'B' OR 
+SUBSTRING(name, 1, 1) = 'E'
+ORDER BY `name`;
+
+07. Find Towns Not Starting With
+SELECT * FROM towns
+WHERE SUBSTRING(name, 1, 1) != 'R' AND
+SUBSTRING(name, 1, 1) != 'D' AND
+SUBSTRING(name, 1, 1) != 'B'
+ORDER BY `name`;
+
+08. Create View Employees Hired After
+CREATE VIEW v_employees_hired_after_2000 
+AS SELECT first_name, last_name 
+FROM employees
+WHERE SUBSTRING(hire_date, 1, 10) > 2000;
+SELECT * FROM v_employees_hired_after_2000;
+
+09. Length of Last Name
+SELECT first_name, last_name
+FROM employees
+WHERE CHAR_LENGTH(last_name) = 5;
+
+10. Countries Holding 'A'
+SELECT country_name, iso_code
+FROM countries
+WHERE country_name LIKE '%a%a%a%'
+ORDER BY iso_code;
+
+11. Mix of Peak and River Names
+SELECT p.peak_name, r.river_name,
+LOWER(CONCAT(p.peak_name, SUBSTRING(r.river_name, 2)))
+AS mix
+FROM peaks p, rivers r
+WHERE right(p.peak_name, 1) = LEFT(r.river_name, 1)
+ORDER BY mix;
+
+12. Games From 2011 and 2012 Year
+SELECT `name`,SUBSTRING(`start`, 1, 10)
+FROM games
+WHERE SUBSTRING(`start`, 1, 4)
+IN('2011', '2012')
+ORDER BY `start`,
+`name`
+LIMIT 50;
+
+13. User Email Providers
+SELECT `user_name`, SUBSTRING(SUBSTRING(email, LOCATE('@', `email`)), 2) AS 'Email Provider'
+FROM users
+ORDER BY `Email Provider`,
+user_name;
+
+
+ 

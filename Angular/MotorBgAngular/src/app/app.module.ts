@@ -11,15 +11,13 @@ import {ContainerModule} from './components/container/container.module';
 import {ToastrModule} from 'ngx-toastr';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {VideoModule} from './components/video/video.module'
-import { videoReducer } from './store/reducers/videos.reducer';
 import { userReducer } from './store/reducers/user.reducer';
-import { motorsReducer } from './store/reducers/motors.reducer';
 
 import { AppComponent } from './app.component';
 
 
 @NgModule({
-  declarations: [AppComponent,],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -32,9 +30,7 @@ import { AppComponent } from './app.component';
     BrowserAnimationsModule,
     VideoModule,
     StoreModule.forRoot ({
-      videos: videoReducer,
       user: userReducer,
-      motors: motorsReducer
     })
   ],
   providers: [],

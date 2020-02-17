@@ -5,3 +5,8 @@
 .logout {
      cursor: pointer; 
 }
+
+.name {
+    color: red !important;
+    text-align: right;
+}

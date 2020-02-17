@@ -15,6 +15,10 @@ export class Auth {
         return window.sessionStorage.getItem('userId');
     }
 
+    getUserName(): string {
+        return window.sessionStorage.getItem('username');
+    }
+
     isAuth(): boolean {
         return window.sessionStorage.getItem('authToken') !== null;
     }

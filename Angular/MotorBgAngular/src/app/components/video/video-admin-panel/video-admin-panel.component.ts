@@ -13,9 +13,6 @@ import {
   animate,
   style
 } from '@angular/animations';
-import { Observable } from 'rxjs';
-import { Store } from '@ngrx/store';
-import { AppState } from 'src/app/store/app.state';
 
 @Component({
   selector: 'app-video-admin-panel',
@@ -35,7 +32,7 @@ import { AppState } from 'src/app/store/app.state';
 
 export class VideoAdminPanelComponent implements OnInit {
   baseUrl: string = 'https://www.youtube.com/embed/';
-  videos: Observable<Video[]>;
+  videos: Video[];
   data: Object;
   form = new FormGroup({
     url: new FormControl('', [Validators.required, Validators.minLength(5)]),
@@ -46,11 +43,15 @@ export class VideoAdminPanelComponent implements OnInit {
     private toastr: ToastrService,
     private router: Router,
     public auth: Auth,
-    private store: Store<AppState>) { }
+    ) { }
 
-  ngOnInit() {
-    this.videos = this.store.select('videos');
-  }
+    ngOnInit() {
+      this.videoService
+        .getVideos()
+        .subscribe(data => {
+          this.videos = data;
+        })
+    }
 
   deleteVideo(videoId) {
     this.videoService

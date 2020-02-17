@@ -6,6 +6,10 @@ import { Router } from '@angular/router';
 import { UserService } from '../../../services/user/user.service';
 import { User } from 'src/app/models/User';
 
+import { Store } from '@ngrx/store';
+import { AppState } from 'src/app/store/app.state';
+import {Login} from '../../../store/actions/user.actions';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -21,6 +25,7 @@ export class LoginComponent implements OnInit {
     private userService: UserService,
     private toastr: ToastrService,
     private router: Router,
+    private store: Store<AppState>
   ) { }
 
   ngOnInit() {
@@ -43,6 +48,7 @@ export class LoginComponent implements OnInit {
       .subscribe(data => {
         this.authenticateUser(data);
         if (data['success']) {
+          this.store.dispatch(new Login(data));
           this.toastr.success('Logged In!', 'Success!');
           this.router.navigate(['/catalog'])
         } else {

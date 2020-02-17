@@ -1,6 +1,12 @@
 import { User } from 'src/app/models/User';
 import * as UserActions from '../actions/user.actions';
 
+let initialState = {
+    _id: '',
+    username: '',
+    password: '',
+}
+
 function login(state: User, user) {
     return {
         _id: user._id,
@@ -9,26 +15,20 @@ function login(state: User, user) {
     }
 }
 
-let myUser = {
-    _id: '123',
-        username: 'Vesko',
-        password: '123',
+function logout () {
+    return initialState;
 }
 
-
 export function userReducer(
-    state: User = {
-        _id: '',
-        username: '',
-        password: '',
-    },
+    state: User = initialState,
+    
     action: UserActions.Types) {
 
     switch (action.type) {
         case UserActions.LOGIN:
             return login(state, action.payload);
-        case UserActions.REGISTER:
-            return [];
+        case UserActions.LOGOUT:
+            return logout();
         default:
             return state;
     }

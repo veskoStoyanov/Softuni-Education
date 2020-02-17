@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import {VideoService} from '../../services/video/video.service';
+import { VideoService } from '../../services/video/video.service';
 
 import { VideoAdminPanelComponent } from './video-admin-panel/video-admin-panel.component';
 import { PlayVideoComponent } from './play-video/play-video.component';

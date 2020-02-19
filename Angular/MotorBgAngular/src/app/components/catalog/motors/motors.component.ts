@@ -11,6 +11,7 @@ import {Router} from '@angular/router';
 })
 
 export class MotorsComponent implements OnInit {
+  isReady: boolean = false;
 motors: Motor[];
 searchedMotor: any;
 
@@ -27,7 +28,8 @@ form = new FormGroup({
       this.motorService
       .getMotors()
       .subscribe(data => {
-        this.motors = data      
+        this.motors = data
+        this.isReady = true;   
       });
     }
 

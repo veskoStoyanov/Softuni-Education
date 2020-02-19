@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import {StoreModule} from '@ngrx/store';
 
 import { HomeModule } from './components/home/home.module';
@@ -12,6 +12,7 @@ import {ToastrModule} from 'ngx-toastr';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {VideoModule} from './components/video/video.module'
 import { userReducer } from './store/reducers/user.reducer';
+import {TokenInterceptor} from './services/interceptors/token.interceptor';
 
 import { AppComponent } from './app.component';
 
@@ -33,7 +34,11 @@ import { AppComponent } from './app.component';
       user: userReducer,
     })
   ],
-  providers: [],
+  providers: [{
+    provide:HTTP_INTERCEPTORS,
+    useClass: TokenInterceptor,
+     multi: true 
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

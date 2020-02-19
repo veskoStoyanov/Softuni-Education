@@ -10,13 +10,6 @@ export class MotorService {
   path: string = 'http://localhost:9999/api/motors';
   constructor(private http: HttpClient) { }
 
-  private createUserHeaders() {
-    return new HttpHeaders({
-      'Accept': 'application/json',
-      'Content-Type': 'application/json',
-    })
-  }
-
   getMotors(): Observable<Array<Motor>> {
     return this.http.get<Array<Motor>>(`${this.path}`);
   }
@@ -26,30 +19,18 @@ export class MotorService {
   }
 
   createMotor(data): Observable<Motor> {
-    return this.http.post<Motor>(`${this.path}`, JSON.stringify(data), {
-      withCredentials: true,
-      headers: this.createUserHeaders()
-    })
+    return this.http.post<Motor>(`${this.path}`, JSON.stringify(data))
   }
 
   likeMotor(motoId, userId): Observable<Motor> {
-    return this.http.put<Motor>(`${this.path}/like/${motoId}`, JSON.stringify({ userId }), {
-      withCredentials: true,
-      headers: this.createUserHeaders()
-    })
+    return this.http.put<Motor>(`${this.path}/like/${motoId}`, JSON.stringify({ userId }))
   }
 
   deleteMotor(motoId): Observable<Motor> {
-    return this.http.delete<Motor>(`${this.path}/${motoId}`, {
-      withCredentials: true,
-      headers: this.createUserHeaders()
-    })
+    return this.http.delete<Motor>(`${this.path}/${motoId}`)
   }
 
   editMotor(data, id): Observable<Motor> {
-    return this.http.put<Motor>(`${this.path}/${id}`, JSON.stringify(data), {
-      withCredentials: true,
-      headers: this.createUserHeaders()
-    })
+    return this.http.put<Motor>(`${this.path}/${id}`, JSON.stringify(data))
   }
 }

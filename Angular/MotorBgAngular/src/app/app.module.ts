@@ -1,19 +1,24 @@
+// Angular Modules
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AppRoutingModule } from './app-routing.module';
-import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import {StoreModule} from '@ngrx/store';
+import {ToastrModule} from 'ngx-toastr';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
+//Custome Modules
+import { AppRoutingModule } from './app-routing.module';
 import { HomeModule } from './components/home/home.module';
 import {CatalogModule} from './components/catalog/catalog.module';
 import {UserModule} from './components/user/user.module';
 import {ContainerModule} from './components/container/container.module';
-import {ToastrModule} from 'ngx-toastr';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {VideoModule} from './components/video/video.module'
+
+
 import { userReducer } from './store/reducers/user.reducer';
 import {TokenInterceptor} from './services/interceptors/token.interceptor';
 
+//Componnents
 import { AppComponent } from './app.component';
 
 

@@ -1,0 +1,64 @@
+	Context(this): Глобален обект който притежава кода който се екзекютва в момента.Зависи от къде се извиква.
+	
+	Извън функцията е празен обект.
+	Вътре във функция е глобалния обект, а ако сме в browser-a е window:
+	function printThis() {
+  		console.log(this);
+  
+	}
+
+
+	Вътре в обект сочи към самия обект:
+	let obj = {
+ 	 name: 'Peter',
+  	func: function printThis() {
+   	 console.log(this.name);
+    
+ 	 }
+	}
+		obj.func(); //Peter
+
+
+	От дом елемент сочи към дом елемента.
+	document.getElementById('btn')
+       .addEventListener('click', function() {
+           console.log(this);  
+       }) // <button id="btn" >Click me</button>
+	
+
+	Arrow function няма собствен this тя приема this-a който е бил извън нея.
+	
+	bind, call, aply -променя контехт(сменя this-a) на функция и й хардкодва елементи, Подаваме новия контекст
+	 и параметрите.
+	
+	let maria = {
+ 	 name: 'Maria',
+	  hello: function (thing) {
+  	  console.log(this.name + " says hello " + thing)
+ 	 }
+	}
+
+	maria.hello('world')              // Maria says hello world
+	let ivan = {name: 'Ivan'};
+
+     С call викаме функцията и казваме с кой контехт искаме да сменим еднократно, параметрите се подават като променливи
+	maria.hello.call(ivan, 'now')    // Ivan says hello now
+    
+     С aply викаме функцията и казваме с кой контехт искаме да смениме днократно, параметрите се подават като масив 
+        maria.hello.apply(ivan, ['now']) // Ivan says hello now
+	
+     
+     С bind викаме функцията и казваме с кой контехт искаме да сменим, връща нова фунция която запазваме като променлива.
+	let helloIvan = maria.hello.bind(ivan, 'now')
+	helloIvan();
+	
+	
+
+
+
+
+
+
+
+
+

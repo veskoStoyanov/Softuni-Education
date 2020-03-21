@@ -1,0 +1,22 @@
+		Module Pattern 
+	Да имаме променливи вътре които не можем да достъпваме отвън(closure) а само с методите да ги манипулираме.
+
+	let moduleObj = {
+  	count: 0,
+  	increase: function () { return count++;},
+  	decrease: function () { return count--;},
+  	print: function () {console.log(counter);}
+
+	} // counter е публичен
+
+
+	(Revealing) : 
+ 	let revModule = (function (){
+  	let count = 0;
+  	function increase() { return count++;}
+  	function decrease() { return count--;}
+  	function print() {console.log(counter);}
+
+ 	 return { increase, decrease, print}
+	})()
+

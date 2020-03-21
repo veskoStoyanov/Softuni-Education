@@ -1,0 +1,313 @@
+	Data Types : Boolean, Null, Undefined, Number, BigInt, String, Symbol and Object
+
+	Event Propagation Когато имаме event в Дом той не се случва само в точно този елемент който е задействал евента, а 
+	тръгва от windows(Capturing Phase) обекта през всички паренти на елемента докато достигне таргета(Target Phase) 
+	и после обратно до windows обекта като един балон който се раздува(Bubbling Phase).
+
+	Use strict: предпазва ни от грешки, дава ни по малко власт
+	
+	-Infinity: Се връща след делене на отрицателно число с 0;
+	
+	undefined се връща когато: type: undefined
+	- имаме декларирана променлива но ме сме задали стойност;
+	let _thisIsUndefined;
+
+	- не сме задали стойност на return във функция;
+	const doNothing = () => {};
+
+	- пропърти което не съществува с обект
+	const someObj = {
+    		a : "ay",
+    		b : "bee",
+    		c : "si"
+  	};
+
+	console.log(_thisIsUndefined); //logs undefined
+  	console.log(doNothing()); //logs undefined
+  	console.log(someObj["d"]); //logs undefined
+
+    	null: type: object
+	 е стойност която е била поставена експлицитно като стойност за да покаже че променливата няма стойност
+	let a = null;
+
+	NaN type : number ако стойноста не е число връща true, иначе връща false(isNaN)
+	Връща се ако се опитваме да правим математически операции на стойност която не е число.
+	let a = 'name';
+	let b = 'age';
+	console.log(a / b); //NaN
+
+	Защо масивите започват от 0: 
+	за един символ се заделят 4 байта , ако имаме масив с 5 елемента = 20байта
+	когато искаме да достъпим елемент фолмулата е :
+	arr[0] = 100(адреса на елемента в паметта) * 0(индекса) * 4байта = 100 което е началото на масива;
+	arr[2] = 100 * 2 * 4байта = 108;
+
+	   Какво е функция: Наименовано парче код което изпълнява задача.  Намаля повтарянето на код и прави езика по динамичен.
+ Първокласни : Могат да бъдат създавани, подавани и връщани от други функции.Всички функции в JS са от first class
+ могат да се разглеждат като обекти или да се присвоявят на променливи.
+    Декларираните(declaration) функции се "хойстват" а записаните в променливи(expression) не, което означава
+ че можем да извикаме функцията преди да сме я декларирали.
+
+ function sum(a, b) {
+    return a + b;
+ }
+
+ let myFunc = function (a, b) {
+    console.log(a + b);
+     
+ }
+
+   Higher-order functions : всички функции в JS могат да бъдат higher-order functions. Примема функция като параметър
+ или връщат друга функция, или и двете, като могат да правят и други операции през това време(map, reduce, filter).
+
+ function sum(a = 5, b = 6) {
+    console.log(a + b);
+
+
+ }
+
+function hightOrderFunc(sums) {
+    console.log('return myFunc');
+    return sums;
+}
+
+   let myFunc = hightOrderFunc(sum);
+ myFunc();
+
+   Curyying : Разцепваме по сложна функция която приема няколко параметара в няколко функции, които приемат само един 
+  параметър. Ако имаме само първия първия параметър , а другите ще ги получим след време. Можем да си извикаме функцията с първия 
+  параметър и да си запазим резултата в променлива докато дойте и следващия параметър. Използва се най вече при заявки.
+  Function Composition - Правим нови функции от старите като им подаваме аргументи. Основната функция е да забавим 
+  изпълнението на функцията докато имаме всички параметри.
+  
+  function sum2(a, b,  c) {
+  return a + b + c;
+  }
+
+  function sum3(a) {
+    return (b) => {
+        return ( c) =>  {
+            return a + b + c;
+        }
+    }
+ }
+
+ console.log(sum3(5)(5)(5));
+
+   Partial application:Превръщаме Функция която приема множество параметри във такава която приема по малко параметри като
+   фиксираме част от тях. Това е един от многото начини да постигнем curyying , ако всеки път махаме по един параметър.
+  Голяма преизпозлваемост , намаля бъгове, 
+
+
+  function myFunc(a, b, c, d) {
+  console.log(a + b + c + d);
+
+}
+
+function partial(a, c, d) {
+    return function (b) {
+        myFunc(a, b, c, d)
+    }
+}
+
+   let involke = partial(1, 2, 3);
+   involke(4); // 10
+   involke(5); // 11
+
+
+   Immediately-Invoked Function Expression(IIFE) :
+ Анонимна Функция която се извиква сама,  изпълнява се веднага след декларацията и не остава в паметта, не замърсява глобания сколп.	
+  Решава проблем с декларирането на прекалено много променливи/функции и измислянето на имена за тях
+
+ (function() {
+   console.log('I am function expression!');
+ }())
+
+ Ако искаме да дадем име можем да я запазим в променлива.
+
+ let iife = function () {
+   console.log('I am function expression!');
+ }()
+
+   Closure :
+     Запечатваме някакво състояние във функцията
+  можем да върнем друга функция като резултат от нащо iife
+	по този начин правим "енкапсулация"(private) в ООП, като counter не можем да го достъпваме отвън освен през фунцията.
+
+   let f = function () {
+    let counter = 0;
+    return function (){
+      console.log(++counter);
+      
+    }
+  }
+
+  let cnr = f();
+  let cnr2 = f();
+  cnr();// 1
+  cnr(); // 2
+  cnr2(); // 1
+
+	
+	Predicate - функция която връща true или false
+
+
+
+	Context(this): Глобален обект който притежава кода който се екзекютва в момента.Зависи от къде се извиква.
+	
+	Извън функцията е празен обект.
+	Вътре във функция е глобалния обект, а ако сме в browser-a е window:
+	function printThis() {
+  		console.log(this);
+  
+	}
+
+
+	Вътре в обект сочи към самия обект:
+	let obj = {
+ 	 name: 'Peter',
+  	func: function printThis() {
+   	 console.log(this.name);
+    
+ 	 }
+	}
+		obj.func(); //Peter
+
+
+	От дом елемент сочи към дом елемента.
+	document.getElementById('btn')
+       .addEventListener('click', function() {
+           console.log(this);  
+       }) // <button id="btn" >Click me</button>
+	
+
+	Arrow function няма собствен this тя приема this-a който е бил извън нея.
+	
+	bind, call, aply -променя контехт(сменя this-a) на функция и й хардкодва елементи, Подаваме новия контекст
+	 и параметрите.
+	
+	let maria = {
+ 	 name: 'Maria',
+	  hello: function (thing) {
+  	  console.log(this.name + " says hello " + thing)
+ 	 }
+	}
+
+	maria.hello('world')              // Maria says hello world
+	let ivan = {name: 'Ivan'};
+
+     С call викаме функцията и казваме с кой контехт искаме да сменим еднократно, параметрите се подават като променливи
+	maria.hello.call(ivan, 'now')    // Ivan says hello now
+    
+     С aply викаме функцията и казваме с кой контехт искаме да смениме днократно, параметрите се подават като масив 
+        maria.hello.apply(ivan, ['now']) // Ivan says hello now
+	
+     
+     С bind викаме функцията и казваме с кой контехт искаме да сменим, връща нова фунция която запазваме като променлива.
+	let helloIvan = maria.hello.bind(ivan, 'now')
+	helloIvan();
+	
+	
+		Module Pattern 
+	Да имаме променливи вътре които не можем да достъпваме отвън(closure) а само с методите да ги манипулираме.
+
+	let moduleObj = {
+  	count: 0,
+  	increase: function () { return count++;},
+  	decrease: function () { return count--;},
+  	print: function () {console.log(counter);}
+
+	} // counter е публичен
+
+
+	(Revealing) : 
+ 	let revModule = (function (){
+  	let count = 0;
+  	function increase() { return count++;}
+  	function decrease() { return count--;}
+  	function print() {console.log(counter);}
+
+ 	 return { increase, decrease, print}
+	})()
+
+	Наследяване на Обект:
+
+	let fatherObj = {
+ 	run: function() {
+    	console.log('running...');
+    
+ 	 }
+		}
+
+	let chieldObj = Object.create(fatherObj);
+
+	Всички методи и пропъртита се наследяват от парент обекта. Когато извикваме даден метод първо търси дали го има 
+	такъв в самия обект, ако не търси в парента му, и след това още по нагоре докато стигне до Object.
+	Object - Parent - Chield
+
+	chieldObj.run(); // running...
+	
+	Можем да овъррайтваме методи:
+	chieldObj.run = function() {
+  	console.log('walking...');
+  
+	}
+
+	chieldObj.run(); // walking...
+
+	Можем да проверим дали метода принадлежи на самия обект: if(chieldObj.hasOwnProperty('run'))
+
+	Обектите имат само proto нямат prototype 
+	chieldObj.__proto__ сочи към парента и по точно към логиката която се наследява от него.
+	
+     Когато има сходна логика която се дублира на много места слагаме тази логика на едно главно място (super class) 
+      и наследяваме тази логика от други класове , по този начин намаляме кода, намаляме грешки, и преизпозлваме код.
+	class Person {
+  	constructor(name, age) {
+    	this.name = name;
+    	this.age = age;
+  	}
+	}
+
+	class Teacher extends Person {
+  	constructor(name, age, object) {
+    	super(name, age)
+    	this.subject = subject
+  	}
+	}
+
+		
+	Prototype държи логиката която ще се наследява от самия клас - Parent.
+	__proto__ сочи към Prototype на Parent класа - Chield
+
+	Abstrack Class 
+	
+	Това е клас който не искаме да инициализираме а служи само за да се наследяват класове от него
+	След като в JS по дефениция няма такъв клас слагаме проверка и в случай хвърляме грешка
+
+	class Abstract {
+  	constructor(){
+    	if(new.target === Abstract) {
+      throw new TypeError('Cannot initialize abstract class!')
+   	 }
+  	}
+	}
+
+
+		Mixin 
+	Чрез тях можем да получим ефекта на множествено наследяване. Това са функционалности които могат да се добавят към класовете
+	
+
+
+
+
+
+
+
+
+
+
+
+	
+
+	

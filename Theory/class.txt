@@ -1,0 +1,37 @@
+     Когато има сходна логика която се дублира на много места слагаме тази логика на едно главно място (super class) 
+      и наследяваме тази логика от други класове , по този начин намаляме кода, намаляме грешки, и преизпозлваме код.
+	class Person {
+  	constructor(name, age) {
+    	this.name = name;
+    	this.age = age;
+  	}
+	}
+
+	class Teacher extends Person {
+  	constructor(name, age, object) {
+    	super(name, age)
+    	this.subject = subject
+  	}
+	}
+
+		
+	Prototype държи логиката която ще се наследява от самия клас - Parent.
+	__proto__ сочи към Prototype на Parent класа - Chield
+
+	Abstrack Class 
+	
+	Това е клас който не искаме да инициализираме а служи само за да се наследяват класове от него
+	След като в JS по дефениция няма такъв клас слагаме проверка и в случай хвърляме грешка
+
+	class Abstract {
+  	constructor(){
+    	if(new.target === Abstract) {
+      throw new TypeError('Cannot initialize abstract class!')
+   	 }
+  	}
+	}
+
+
+		Mixin 
+	Чрез тях можем да получим ефекта на множествено наследяване. Това са функционалности които могат да се добавят към класовете
+	

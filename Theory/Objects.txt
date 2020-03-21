@@ -1,0 +1,30 @@
+	Наследяване на Обект:
+
+	let fatherObj = {
+ 	run: function() {
+    	console.log('running...');
+    
+ 	 }
+		}
+
+	let chieldObj = Object.create(fatherObj);
+
+	Всички методи и пропъртита се наследяват от парент обекта. Когато извикваме даден метод първо търси дали го има 
+	такъв в самия обект, ако не търси в парента му, и след това още по нагоре докато стигне до Object.
+	Object - Parent - Chield
+
+	chieldObj.run(); // running...
+	
+	Можем да овъррайтваме методи:
+	chieldObj.run = function() {
+  	console.log('walking...');
+  
+	}
+
+	chieldObj.run(); // walking...
+
+	Можем да проверим дали метода принадлежи на самия обект: if(chieldObj.hasOwnProperty('run'))
+
+	Обектите имат само proto нямат prototype 
+	chieldObj.__proto__ сочи към парента и по точно към логиката която се наследява от него.
+	

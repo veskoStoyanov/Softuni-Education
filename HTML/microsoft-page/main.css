@@ -261,10 +261,10 @@
     }
   
     .main-nav ul.main-menu {
-      display: block;
-      position: absolute;
-      top:0;
-      left: 0;
+      display: block !important;
+      position: absolute !important;
+      top:0 !important;
+      left: 0 !important;
       background: #f2f2f2;
       width: 50%;
       height: 100%;

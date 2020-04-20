@@ -1,0 +1,78 @@
+// nested до 3 нива е добре.
+
+.container {
+    margin: 0;
+
+    .box {
+        color: black;
+
+        p:last-child {
+            font-size: 50px;
+        }
+    }
+}
+
+//събираме всички правила на едно място
+
+a {
+    color: orange;
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    &:active {
+        color: red;
+    }
+}
+
+//интерпулация
+
+.site {
+    width: 100px;
+
+    @at-root {
+        #{&}-header {
+            position: relative;
+        }
+
+        //variables
+
+        $textColor: black;
+    }
+}
+
+body {
+    color: $textColor;
+}
+
+
+//maps
+
+$map: (key1: value1, key2: value2, key3: value3);
+
+
+//loops
+
+@for $i from 1 through 3 {
+    .item-#{$i} {
+        width: 2em * $i
+    }
+}
+
+@each $animals in puma,
+cat,
+dog {
+    .#{$animal}-icon {
+        background-image: url('/images/#{$animal}.png').;
+    }
+}
+
+    @mixin fa($size) {
+        font-size: $size;
+        display: inline;
+    }
+
+        a.button {
+            @include fa(15px);
+            }

@@ -1,0 +1,70 @@
+/* Transition */
+body {
+    /* кое пропърти */
+    transition-property: color;
+    /* за колко време  */
+    transition-duration: 4s;
+    /* как да се изпънява */
+    transition-timing-function: ease-in-out;
+    /* след колко време да започне */
+    transition-delay: 1s;
+    transition: color 4s ease-in-out 1s;
+}
+
+/* Animation */
+
+
+
+
+/* @keyframes slidein {
+    from {
+        transform: translateX((-20rem));
+        opacity: 0;
+    }
+    to {
+        transform: translateX((0));
+        opacity: 1;
+    }
+} */
+
+@keyframes slide {
+    0% {
+        transform: translateX(-20rem);
+        opacity: 0;
+    }
+
+    50% {
+        transform: translateX(10rem);
+     
+    }
+    to {
+        transform: translateX(0);
+        opacity: 2;
+        background: blue;
+    }
+}
+
+.box {
+    width: 200px;
+    height: 200px;
+    background: red;
+    animation: slide 5s linear forwards;
+}
+
+body {
+    /* след колко време да започне */
+    animation-delay: 1s;
+    /* в каква посока forward или reverce */
+    animation-direction: forwards;
+    /* за колко време  */
+    animation-duration: 4s;
+    /* колко пъти да се изпълни */
+    animation-iteration-count: infinity;
+    /* трябва да й кажем как се казва */
+    animation-name: slide;
+    /* дали да се паузира */
+    /* animation-play-state: ; */
+    animation-timing-function: linear;
+    /* след анимацията къде ще остане елемента  */
+    /* animation-fill-mode: ; */
+}

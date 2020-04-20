@@ -1,0 +1,16 @@
+:root {
+    --color-text-main: red;
+    --color-text-active: black;
+    --color-a: yellow;
+    --font-size-main: 16px;
+}
+
+.main {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+
+    /* ако я няма променливата ще се вземе следващата стойност */
+    background:var(--color-a, var(--color-text-main, purple));
+    font-size: var(--font-size-main);
+}

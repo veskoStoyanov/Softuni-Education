@@ -1,0 +1,54 @@
+#catalog .img {
+    height: 200px;
+    width: 100%;
+    display: block;
+    cursor: pointer;
+}
+
+#catalog .panel-body {
+    margin-top: 3rem;
+    padding-left: 1%;
+    padding-right: 0.5%;
+}
+
+#catalog .panel {
+    text-align: center;
+    padding-top: 5%;
+}
+
+#catalog form {
+    padding-left: 4rem;
+    padding-top: 3%;
+    padding-bottom: 2%;
+}
+
+#catalog h1 {
+    text-align: center;
+}
+
+#catalog .like {
+    width: 10%;
+    margin-left: 85%;
+}
+
+#catalog .card {
+    width: 98% !important;
+}
+
+@media (max-width: 990px) {
+    #catalog {
+        margin-top: 5rem;
+        padding: 0 1rem;
+    }
+   
+}
+
+@media (max-width: 600px) {
+    #catalog {
+        padding-top: 2rem;
+    }
+   .search {
+       display: none;
+   }
+}
+

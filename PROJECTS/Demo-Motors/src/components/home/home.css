@@ -1,0 +1,9 @@
+@media (max-width: 600px) {
+    .jumbotron {
+        padding-top: 5rem;
+    }
+}
+
+.info {
+    color: red;
+}

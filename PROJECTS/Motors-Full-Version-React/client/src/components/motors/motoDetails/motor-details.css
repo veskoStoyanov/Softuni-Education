@@ -1,0 +1,40 @@
+#motor-details img {
+    width: 100%;
+    height: auto;  
+}
+
+#motor-details .container{
+    padding-top: 2%;
+    margin: 0 auto
+}
+
+#motor-details .like{
+    width: 4%;
+    height: 2vw;
+}
+
+#motor-details h5{
+     display: inline;
+ }
+
+ #motor-details .card-header {
+    text-align: center;
+    padding-top: 5%;
+    padding-bottom: 2%;
+ }
+
+ #motor-details .a-btn {
+     margin-left: 46%;
+     margin-bottom: 3%;
+     padding-right: 30px;
+     padding-left: 35px;
+ }
+
+ #motor-details .second-btn {
+     margin-left: 30px;
+ }
+
+ #motor-details .first-btn {
+    margin-left: 10px;
+}
+

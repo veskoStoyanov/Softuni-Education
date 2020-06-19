@@ -1,0 +1,31 @@
+.register-container {
+    padding-top: 1%;
+    padding-bottom: 5%;
+    padding-left: 30%;
+    margin-top: 0;
+}
+.register-h2 {
+
+    padding-bottom: 5%;
+    text-align: center;
+}
+
+.register-alert-warning  {
+    padding-top: 5%;
+}
+
+#register button {
+    margin-left: 37%;
+    margin-bottom: 7%;
+}
+
+#register .form-group {
+    margin-left: 10%;
+}
+
+.register-h4 {
+    display: inline;
+}
+#register .mb-0 {
+    display: inline;
+}

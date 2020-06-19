@@ -1,0 +1,40 @@
+
+#list-hotel .img{
+    height: 200px; width: 100%; display: block;
+}
+
+#list-hotel .panel-body{
+    margin-top: 3rem;
+    padding-left: 1%;
+    padding-right: 0.5%;
+}
+
+#list-hotel .panel{
+   text-align: center;
+   padding-top: 5%;
+}
+
+#list-hotel form {
+   padding-left: 40%;
+    padding-top: 3%;
+    padding-bottom: 2%;
+}
+
+#list-hotel h1 {
+    text-align: center;
+}
+
+
+#list-hotel .like{
+    width: 10%;
+margin-left: 85%;
+}
+
+#list-hotel .card {
+    width: 98% !important;
+    
+}
+
+#list-hotel .btnn {
+    margin: 0 auto;
+}

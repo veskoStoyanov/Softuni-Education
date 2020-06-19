@@ -1,0 +1,19 @@
+#commets { 
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+#create-comment .title {
+ padding: 50px 0;
+    margin-left: 180px;
+}
+
+#create-comment .create-comment-btn {
+   margin-left: 180px;
+}
+
+#comment {
+    margin-top: 50px;
+    margin-left: 70px;
+}

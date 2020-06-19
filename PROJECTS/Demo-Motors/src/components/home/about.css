@@ -1,0 +1,24 @@
+.back {
+  overflow: hidden;
+
+    background-image: url("https://images.unsplash.com/photo-1558980664-ce6960be307d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80");
+      width: 100%;
+      height: 100vh;
+      background-size: cover;
+      margin: 0 auto;
+    }
+  
+    .back p {
+      color: blanchedalmond;
+    }
+    .back h1 {
+      color: blanchedalmond;
+    }
+    .back h5 {
+      color: blanchedalmond;
+    }
+  
+    .back span {
+      color: orange;
+    }
+

@@ -1,0 +1,22 @@
+#play-video .container {
+    margin-top: 8%;
+    width: 70%;
+
+}
+
+#play-video .title {
+    margin-bottom: 3%;
+}
+
+#play-video .div {
+    margin-bottom: 5%;
+}
+
+#play-video .buttons {
+    display: flex;
+    margin-left: 350px;
+}
+
+#play-video .delete {
+    margin-left: 30px;
+}

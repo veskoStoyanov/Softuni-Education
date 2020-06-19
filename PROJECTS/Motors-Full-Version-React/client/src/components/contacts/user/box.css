@@ -1,0 +1,32 @@
+#main {
+   margin-left: 400px;
+   
+}
+
+#main .box {
+    display: flex;
+    margin: 30px 0;
+
+    
+}
+
+#main h1 {
+    margin-left: 220px;
+    margin-top: 100px;
+    padding-bottom: 50px;
+}
+
+#main .search {
+    margin: 190px;
+}
+
+#main .resently {
+    margin-right: 30px;
+}
+
+#main .inbox {
+    margin-right: 30px;
+}
+
+
+

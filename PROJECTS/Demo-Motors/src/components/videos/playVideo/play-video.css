@@ -1,0 +1,32 @@
+@media (max-width: 990px) {
+    #play-video .container {      
+        width: 100%;
+          
+    }
+}
+
+@media (min-width: 990px) {
+    #play-video .container {      
+        width: 70%;
+          
+    }
+}
+
+#play-video .container {
+    margin-top: 8%;
+    height: auto;
+
+}
+
+#play-video .title {
+    margin-bottom: 3%;
+}
+
+#play-video .div {
+    margin-bottom: 5%;
+}
+
+#play-video .buttons {
+    display: flex;
+   justify-content: center;
+}

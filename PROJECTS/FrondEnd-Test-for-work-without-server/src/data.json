@@ -1,0 +1,112 @@
+{
+    "objects": [
+        {
+            "id": 1,
+            "category": "Автомобили",
+            "count": 2,
+            "type": "car"
+          },
+          {
+            "id": 2,
+            "category": "Имоти",
+            "count": 1,
+            "type": "house-user"
+          },
+          {
+            "id": 3,
+            "category": "Групи приятели за пътуване",
+            "count": 2,
+            "type": "user-friends"
+          }
+    ],
+    "policies": [
+        {
+          "id": "dad1312313",
+          "company": "Alianz",
+          "type": "Застраховка автокаско",
+          "object": "Alfa-romeo 146",
+          "start": "12.05.20",
+          "end": "12.05.22"
+        },
+        {
+          "id": "dad1312312",
+          "company": "Alianz",
+          "type": "Гражданска отговорност",
+          "object": "Aston Martin DBS",
+          "start": "12.05.20",
+          "end": "12.05.22"
+        },
+        {
+          "id": "dad1312323",
+          "company": "Alianz",
+          "type": "Застраховка автокаско",
+          "object": "Alfa-romeo 146",
+          "start": "12.05.20",
+          "end": "12.05.22"
+        }
+      ],
+      "months": [
+        {
+          "id": 1,
+          "expire": false,
+          "month": "Януари"
+        },
+        {
+          "id": 2,
+          "expire": false,
+          "month": "Февруари"
+        },
+        {
+          "id": 3,
+          "expire": false,
+          "month": "Март"
+        },
+        {
+          "id": 4,
+          "expire": false,
+          "month": "Април"
+        },
+        {
+          "id": 5,
+          "expire": false,
+          "month": "Май"
+        },
+        {
+          "id": 6,
+          "expire": false,
+          "month": "Юни"
+        },
+        {
+          "id": 7,
+          "expire": false,
+          "month": "Юли"
+        },
+        {
+          "id": 8,
+          "expire": false,
+          "month": "Август"
+        },
+        {
+          "id": 9,
+          "expire": false,
+          "month": "Септември"
+        },
+        {
+          "id": 10,
+          "expire": false,
+          "month": "Октомври"
+        },
+        {
+          "id": 11,
+          "expire": true,
+          "month": "Ноември"
+        },
+        {
+          "id": 12,
+          "expire": false,
+          "month": "Декември"
+        }
+
+      ]
+
+}

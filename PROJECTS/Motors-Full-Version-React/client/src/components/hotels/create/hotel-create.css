@@ -1,0 +1,17 @@
+#create-hotel .hotel {
+    max-width: 50%;
+    margin-left: 25%;
+    margin-top: 5%;
+    margin-bottom: 2%;
+}
+
+
+#create-hotel .lists {
+    max-width: 60%;
+    margin-left: 20%;
+}
+
+#create-hotel .title {
+    margin-left: 100px; 
+  
+} 

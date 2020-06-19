@@ -1,0 +1,21 @@
+.back {
+    background-image: url("https://mcn-images.bauersecure.com/PageFiles/666077/Craziest-bikes-01.jpg");
+      width: 100%;
+      height: 800px;
+      background-size: cover;
+    }
+  
+    .back p {
+      color: blanchedalmond;
+    }
+    .back h1 {
+      color: blanchedalmond;
+    }
+    .back h5 {
+      color: blanchedalmond;
+    }
+  
+    .back span {
+      color: orange;
+    }
+  

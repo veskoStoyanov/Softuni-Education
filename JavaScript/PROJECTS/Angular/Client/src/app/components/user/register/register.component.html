@@ -1,0 +1,50 @@
+<div class="alert alert-dismissible alert-warning">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <h4 class="alert-heading">Warning!</h4>
+  <p class="mb-0">Best check yo self, you're not looking too good. Nulla vitae elit libero, a pharetra augue. Praesent
+    commodo cursus magna, <a href="#" class="alert-link">vel scelerisque nisl consectetur et</a>.</p>
+</div>
+<div class="bs-docs-section log">
+  <div class="col-lg-6">
+    <div class="bs-component">
+      <form [formGroup]="form" (ngSubmit)="register()">
+        <div class="alert alert-dismissible alert-primary">
+          <fieldset>
+            <h2>Register</h2>
+            <div class="form-group">
+              <label for="exampleInputEmail1">User Name</label>
+              <input formControlName="username" type="text" class="form-control" id="exampleInputEmail1"
+                placeholder="Enter username">
+                <div *ngIf="form.get('username').touched && form.get('username').invalid" class="alert alert-danger">
+                  <div *ngIf="form.get('username').errors.required">Username is reqired!</div>
+                  <div *ngIf="form.get('username').errors.minlength">Username must be at least 3 characters!</div>
+                  </div>
+              <small id="emailHelp" class="form-text text-muted">Please choose an username and enter it!</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword">Password</label>
+              <input formControlName="password" type="password" class="form-control" id="exampleInputPassword"
+                placeholder="Password">
+                <div *ngIf="form.get('password').touched && form.get('password').invalid" class="alert alert-danger">
+                  <div *ngIf="form.get('password').errors.required">Password is reqired!</div>
+                  <div *ngIf="form.get('password').errors.minlength">Password must be at least 6 characters!</div>
+                  </div>
+              <small id="emailHelp" class="form-text text-muted">We'll never share your password with anyone
+                else.</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">re-Password</label>
+              <input formControlName="rePassword" type="password" class="form-control" id="exampleInputPassword1"
+                placeholder="re-Password">
+                <div *ngIf="form.get('rePassword').touched && form.get('rePassword').invalid" class="alert alert-danger">
+                  <div *ngIf="form.get('rePassword').errors.required">re-Password is reqired!</div>
+                  </div>
+              <small id="emailHelp" class="form-text text-muted">Please repeat the password again!</small>
+            </div>
+          </fieldset>
+          <button type="submit" class="btn btn-secondary">Register! »»»</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

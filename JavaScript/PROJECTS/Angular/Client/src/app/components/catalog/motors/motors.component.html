@@ -1,0 +1,32 @@
+
+<main role="main">
+
+ 
+    <div class="panel panel-default">
+      <div class="bs-component">      
+             <form [formGroup]="form" (ngSubmit)="search()" class="form-inline my-2 my-lg-0" >
+          <input formControlName="searchValue" class="form-control mr-sm-2" type="text" placeholder="Search">
+          <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+        </form>
+
+ <h1 *ngIf="!isReady">Loading...</h1>
+  
+        <h1 *ngIf="!motors || motors.length === 0">There are no Motors available!</h1>
+
+      <div *ngIf="motors" class="panel-body">
+        <div class="row"> 
+        <div *ngFor="let motor of motors" class="col-md-3">
+          <div>
+          <app-motor [motor]="motor">
+          </app-motor>
+          </div>
+        </div>  
+        </div>
+      </div>
+
+     
+    </div>
+    
+    
+    </div>
+    </main>

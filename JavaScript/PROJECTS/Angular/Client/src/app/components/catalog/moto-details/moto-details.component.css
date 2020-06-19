@@ -1,0 +1,30 @@
+img {
+    width: 100%;
+    height: auto;  
+}
+
+.container{
+    padding-top: 2%;
+    margin: 0 auto
+}
+
+.like{
+    width: 4%;
+    height: 2vw;
+}
+ h5{
+     display: inline;
+ }
+
+ .card-header {
+    text-align: center;
+    padding-top: 5%;
+    padding-bottom: 2%;
+ }
+
+ .a-btn {
+     margin-left: 45%;
+     margin-bottom: 3%;
+     padding-right: 30px;
+     padding-left: 30px;
+ }

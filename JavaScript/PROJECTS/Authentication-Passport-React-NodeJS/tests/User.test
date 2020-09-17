@@ -1,0 +1,174 @@
+/**
+ * A demo test.
+ * Copyright (C) 2020, InsInCloud LLC
+ */
+
+const got = require('got');
+const config = require('../specs/spec-config');
+const SERVICE_URL = process.env.SERVICE_URL || "http://127.0.0.1:5000/";
+
+const User = require('../src/core/models/User');
+const Core = require("../src/core");
+const usersFake = require('../db/users.fake.json').data;
+
+const restoreDb = async () => Promise.all([
+	User.deleteMany().then(() => User.insertMany(usersFake))
+]);
+
+console.log(`Server URL to be used: '${SERVICE_URL}'`);
+
+describe("User testing", () => {
+	beforeAll(() => Core.Db.connect(config));
+	beforeAll(() => restoreDb);
+	afterAll(() => restoreDb().then(() => Core.Db.disconnect()));
+
+	describe('register, login, logout on /user', () => {
+
+		it('logs in through facebook on /login/social', async () => { 
+			const res = await got.post(SERVICE_URL + 'api/user/login/social', {
+				json: {
+					password: '123456',
+					email: 'insintestemail@abv.bg',
+				},
+				responseType: 'json'
+			});
+                
+			const { user, success, message, token } = res.body;
+			
+			expect(typeof token).toBe('string');
+			expect(user.active).toBeTruthy();
+			expect(user.email).toBe('insintestemail@abv.bg');
+			expect(message).toBe('User has been successfuly loged in!');
+			expect(success).toBeTruthy();
+
+			await User.findOneAndRemove({ email: 'insintestemail@abv.bg' });
+		});
+
+		it('logs in through google on /login/social', async () => { 
+			const res = await got.post(SERVICE_URL + 'api/user/login/social', {
+				json: {
+					password: '123456',
+					email: 'insintestemail@abv.bg',
+				},
+				responseType: 'json'
+			});
+
+			const { user, success, message, token } = res.body;
+
+			expect(typeof token).toBe('string');
+			expect(user.active).toBeTruthy();
+			expect(user.email).toBe('insintestemail@abv.bg');
+			expect(message).toBe('User has been successfuly loged in!');
+			expect(success).toBeTruthy();
+
+			await User.findOneAndRemove({ email: 'insintestemail@abv.bg' });
+		});
+
+		it('registers', async () => { 
+			const res = await got.post(SERVICE_URL + 'api/user', {
+				json: {
+					password: '123456',
+					email: 'insintestemail@abv.bg',
+				},
+				responseType: 'json'
+			});
+         
+			const { success } = res.body;
+			
+			expect(success).toBeTruthy();
+		});
+    
+		it('returns an error', async () => {
+			const res = await got.post(SERVICE_URL + 'api/user', {
+				json: {
+					password: '123456',
+					email: 'insintestemail@abv.bg',
+					loginType: 'form'
+				},
+				responseType: 'json'
+			});
+    
+			const { message, success } = res.body;
+    
+			expect(message).toBe('This email is already linked to an existing account.');
+			expect(success).toBeFalsy();
+		});
+
+		it('receives a notification on /login/form")', async () => { 
+			const res = await got.post(SERVICE_URL + 'api/user/login/form', {
+				json: {
+					email: 'insintestemail@abv.bg',
+					password: '123456'
+				},
+				responseType: 'json'
+			});
+
+			const { message, success } = res.body;
+
+			expect(success).toBeFalsy();
+			expect(message).toBe('Confirm your email first!');
+		}); 
+
+		it('logs in on /login/form")', async () => {
+			const email = 'insintestemail@abv.bg';
+			const data = await User.findOne({ email });
+			
+			data.active = true;
+			await data.save();
+
+			const res = await got.post(SERVICE_URL + 'api/user/login/form', {
+				json: {
+					password: '123456',
+					email
+				},
+				responseType: 'json'
+			});
+
+			const { token, user, message, success } = res.body;
+            
+			expect(user.email).toBe('insintestemail@abv.bg');
+			expect(typeof token).toBe('string');
+			expect(success).toBeTruthy();
+			expect(message).toBe('User has been successfuly logged in!');
+		}); 
+
+		it('wrong user on /login/form', async () => {
+			const res = await got.post(SERVICE_URL + 'api/user/login/form', {
+				json: {
+					password: '123456',
+					email: 'fakeUser@abv.bg'
+				},
+				responseType: 'json'
+			});
+                
+			const data = res.body;
+    
+			expect(data.message).toBe('Invalid Credentials!');
+			expect(data.success).toBeFalsy();
+		}); 
+
+		it('wrong password on /login/form', async () => {
+			const res = await got.post(SERVICE_URL + 'api/user/login/form', {
+				json: {
+					password: '123456789',
+					email: 'insintestemail@abv.bg'
+				},
+				responseType: 'json'
+			});
+                
+			const data = res.body;
+    
+			expect(data.message).toBe('Invalid Credentials!');
+			expect(data.success).toBeFalsy();
+		});
+    
+		it('logs out on /logout', async () => {
+			const res = await got.post(SERVICE_URL + 'api/user/logout');
+			const data = JSON.parse(res.body);
+			
+			expect(data.message).toBe('Successful logout!');
+			expect(data.success).toBeTruthy();
+			
+		});	
+	});
+});

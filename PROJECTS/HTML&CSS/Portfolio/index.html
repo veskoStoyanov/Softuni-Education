@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MyPortfolio</title>
+    <meta
+      name="description"
+      content="A CSS Grid powered menu with a box look"
+    />
+    <meta
+      name="keywords"
+      content="menu, css grid, box, navigation, web development, animation"
+    />
+    <meta name="author" content="Codrops" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/vanila-title.css">
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Custom Fonts -->
+    <link
+      href="vendor/fontawesome-free/css/all.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="vendor/simple-line-icons/css/simple-line-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link href="css/stylish-portfolio.min.css" rel="stylesheet" />
+
+    <script>
+      document.documentElement.className = "js";
+      var supportsCssVars = function () {
+        var e,
+          t = document.createElement("style");
+        return (
+          (t.innerHTML = "root: { --tmp-var: bold; }"),
+          document.head.appendChild(t),
+          (e = !!(
+            window.CSS &&
+            window.CSS.supports &&
+            window.CSS.supports("font-weight", "var(--tmp-var)")
+          )),
+          t.parentNode.removeChild(t),
+          e
+        );
+      };
+      supportsCssVars() ||
+        alert(
+          "Please view this demo in a modern browser that supports CSS Variables."
+        );
+    </script>
+  </head>
+  <body id="page-top" class="demo-1">
+    <main>
+      <a class="menu-toggle rounded" href="#">
+        <i class="fas fa-bars"></i>
+      </a>
+      <nav id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+          <li class="sidebar-brand">
+            <a class="js-scroll-trigger" href="index2.html">Show More</a>
+          </li>
+          <li class="sidebar-nav-item">
+            <a class="js-scroll-trigger" href="#about">About</a>
+          </li>
+          
+          <li class="sidebar-nav-item">
+            <a class="js-scroll-trigger" href="#services">Education</a>
+          </li>
+          <li class="sidebar-nav-item">
+            <a class="js-scroll-trigger" href="#portfolio">Projects</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Header -->
+      <header id="header-index" class="masthead">
+        <div class="container d-flex h-100 align-items-center">
+          <div class="mx-auto text-center">
+            <h1 class="mx-auto my-0 text-uppercase">Portfolio</h1>
+            <p>Vesko Stoyanov</p>
+            <h2 id="header-text" class="text-white-50 mx-auto mt-2 mb-5">
+              This project is only for exercise and to keep me busy.
+            </h2>
+            <a id="btn-diploma"
+              href="https://softuni.bg/certificates/details/80847/969665d7"
+              class="btn btn-primary js-scroll-trigger"
+              >DIPLOMA</a
+            >
+          </div>
+        </div>
+      </header>
+
+      <!-- About -->
+      <section class="content-section bg-light" id="about">
+        <div class="container text-center">
+          <div class="row">
+            <div class="col-lg-10 mx-auto">
+              <div id="title-container">
+              
+                  <div class="wavy">
+                    <span style="--i:1;">W</span>
+                    <span style="--i:2;">h</span>
+                    <span style="--i:3;">a</span>
+                    <span style="--i:4;">t</span>
+                    <span style="--i:5;"></span>
+                    <span style="--i:6;">A</span>
+                    <span style="--i:7;">b</span>
+                    <span style="--i:8;">o</span>
+                    <span style="--i:9;">u</span>
+                    <span style="--i:10;">t</span>
+                    <span style="--i:11;"></span>
+                    <span style="--i:12;">m</span>
+                    <span style="--i:13;">e</span>
+                  
+                  </div>
+                </div>
+             
+              <!-- <h2 id="title-about">Who am I</h2> -->
+              <p class=" lead mb-5">
+                I have been studying programming for almost 2 year. During this
+                time I went through two courses with
+                <a class="word"
+                  href="https://github.com/veskoStoyanov/Softuni-Education/tree/master/C%23"
+                  >C#</a
+                >
+                <a class="gold word" href="https://softuni.bg/certificates/details/60616/ea4dd6e4"
+                  >Programming Basics</a
+                >
+                and
+                <a class="gold" href="https://softuni.bg/certificates/details/65248/01a17c48"
+                  >Technology Fundamentals</a
+                >, where I studied algorithms troubleshooting,<a 
+                  href="https://github.com/veskoStoyanov/Softuni-Education/tree/master/C%23/2.%20Technology%20Fundamentals%20with%20C%23/Data%20Types%20and%20Variables%20-%20Exercise">
+                  data types and variables</a
+                >, nested loops, methods,
+                <a
+                  href="https://github.com/veskoStoyanov/Softuni-Education/tree/master/C%23/2.%20Technology%20Fundamentals%20with%20C%23/Array/Arrays%20-%20Exercise"
+                  >Arrays</a
+                >
+                ,
+                <a 
+                  href="https://github.com/veskoStoyanov/Softuni-Education/tree/master/C%23/2.%20Technology%20Fundamentals%20with%20C%23/Array/Lists%20-%20Exercise"
+                  >Lists</a
+                >
+                ,<a 
+                  href="https://github.com/veskoStoyanov/Softuni-Education/tree/master/C%23/2.%20Technology%20Fundamentals%20with%20C%23/TEXT%20PROCESSING%20AND%20REGULAR%20EXPRESSIONS"
+                  >Regex</a
+                >
+                ,
+                <a
+                  href="https://github.com/veskoStoyanov/Softuni-Education/tree/master/C%23/2.%20Technology%20Fundamentals%20with%20C%23/Array/ASSOCIATIVE%20ARRAYS"
+                  >Dictionaries</a
+                >
+                ,
+                <a 
+                  href="https://github.com/veskoStoyanov/Softuni-Education/tree/master/C%23/3.%20C%23%20ADVANCED/DefiningClasses"
+                  >Classes</a
+                >
+                , lambda expression, linq,
+                <a 
+                  href="https://github.com/veskoStoyanov/Softuni-Education/tree/master/C%23/3.%20C%23%20ADVANCED/Matrix"
+                  >matrices</a
+                >
+                ,
+                <a 
+                  href="https://github.com/veskoStoyanov/Softuni-Education/tree/master/C%23/3.%20C%23%20ADVANCED/Stacks-and-Queues%20-%20Exercise"
+                  >Stucks and Queues</a
+                >
+                ,functional programming and I built a small blog-project with
+                ms-sql.
+              </p>
+              <p class="lead mb-5">
+                In order to improve my skill, I enrolled another six courses
+                with JavaScript
+                <a class="gold" href="https://softuni.bg/certificates/details/67287/64627dd8"
+                  >JS Essential</a
+                >,
+                <a class="gold" href="https://softuni.bg/certificates/details/68457/22c296d6"
+                  >JS Advanced</a
+                >,
+                <a class="gold" href="https://softuni.bg/certificates/details/70028/739e9db0"
+                  >JS Apps</a
+                >
+                in which we build
+                <a 
+                  href="https://github.com/veskoStoyanov/Softuni-Education/tree/master/JS-Core/Exam-SiglePageApp"
+                  >API</a
+                >
+                with raw javascript and Handlebars. The following courses were
+                <a class="gold" href="https://softuni.bg/certificates/details/72498/676c04d8"
+                  >JS Back-End</a
+                >,
+                <a class="gold" href="https://softuni.bg/certificates/details/75509/4fcc9f79"
+                  >ReactJS</a
+                >,
+				<a class="gold"
+				 href="https://softuni.bg/certificates/details/77669/22e7a5be"
+                  >Angular</a
+                >
+                , HTML and CSS( Box-model, Position, Flexbox, Media queries,
+                Variables, SASS, GRID, Transitions and Animations) ,
+                <a 
+                  href="https://github.com/veskoStoyanov/Softuni-Education/tree/master/PHP/PhP-Basic"
+                  >Php Fundamentals</a
+                >
+                and
+                <a 
+                  href="https://github.com/veskoStoyanov/Softuni-Education/tree/master/mySQL"
+                  >MySql syntax</a
+                >, Jekyll, HTTP and Git.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="content-section bg-primary text-white text-center"
+        id="services"
+      >
+        <div class="container">
+          <div class="content-section-heading">
+            <h3 class="text-secondary mb-0">Education</h3>
+            <h2 id="title-fade" class="mb-5 ">What Have I been learning...</h2>
+          </div>
+          <div class="row">
+            <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+              <span class="service-icon rounded-circle mx-auto mb-3">
+                <i id="js-pic" class="fab fa-node-js"></i>
+              </span>
+              <h4>
+                <strong>JavaScript</strong>
+              </h4>
+              <p class="text-faded mb-0">
+                I did hundreds of exercises and became familiar with
+                <a
+                  class="white"
+                  href="https://github.com/veskoStoyanov/Softuni-Education/tree/master/algorithms"
+                  >algorithms</a
+                >
+                ,
+                <a
+                  class="white"
+                  href="https://github.com/veskoStoyanov/Softuni-Education/tree/master/JS-Core/Objects%20and%20Classes"
+                  >objects, Classes and OOP</a
+                >,
+                <a
+                  class="white"
+                  href="https://github.com/veskoStoyanov/Softuni-Education/tree/master/JS-Core/ADVANCED%20FUNCTIONS"
+                  >fuctions</a
+                >, matrices ,
+                <a
+                  class="white"
+                  href="https://github.com/veskoStoyanov/Softuni-Education/tree/master/JS-Core/Associative%20Arrays"
+                  >Maps</a
+                >
+                , JSON,
+                <a
+                  class="white"
+                  href="https://github.com/veskoStoyanov/Softuni-Education/tree/master/JS-Core/REGULAR%20EXPRESSIONS"
+                  >Regex</a
+                >
+                ,
+                <a
+                  class="white"
+                  href="https://github.com/veskoStoyanov/Softuni-Education/tree/master/JS-Core/HTTP-AJAX-fetch"
+                  >AJAX and asynchronous programming</a
+                >
+                ,
+                <a
+                  class="white"
+                  href="https://github.com/veskoStoyanov/Softuni-Education/tree/master/JS-Core/Unit-tests-Mocha-Chai"
+                  >Unit testing with Mocha and Chai</a
+                >,
+                <a
+                  class="white"
+                  href="https://github.com/veskoStoyanov/Softuni-Education/tree/master/JS-Core/DOM"
+                  >DOM VanillaJS.</a
+                >
+              </p>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+              <span class="service-icon rounded-circle mx-auto mb-3">
+                <i id="react-pic" class="fab fa-react i"></i>
+              </span>
+              <h4>
+                <strong>ReactJS</strong>
+              </h4>
+              <p class="text-faded mb-0">
+                I built <a class="white" href="https://github.com/veskoStoyanov/PROJECTS/tree/master/Motors-Full-Version-React">project</a> with registration, login, logout ,
+                authentication and authorization, Redux, Hooks, google maps,
+                checking the weather in real time and many more tools used in.
+                Testing with Jest.
+              </p>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
+              <span class="service-icon rounded-circle mx-auto mb-3">
+                <i class="fab fa-node"></i>
+              </span>
+              <h4>
+                <strong>Node JS</strong>
+              </h4>
+              <p class="text-faded mb-0">
+                For my projects I used Api made by myself on <a class="white" href="https://github.com/veskoStoyanov/PROJECTS/tree/master/Motors-Full-Version-React/Moto">NodeJS(Express)</a> and
+                MongoDb(mongoose).
+                <!-- <i class="fas fa-heart"></i>
+            Start Bootstrap!</p> -->
+              </p>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+              <span class="service-icon rounded-circle mx-auto mb-3">
+                <i class="fab fa-angular"></i>
+              </span>
+              <h4>
+                <strong>Angular</strong>
+              </h4>
+              <p class="text-faded mb-0">
+                I made <a class="white" href="https://github.com/veskoStoyanov/Angular-Project">SPA</a>  project with typescript and best practices for
+                software development and Bootstrap.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Portfolio -->
+      <section class="content-section" id="portfolio">
+        <div class="container">
+          <div class="content-section-heading text-center">
+            <h3 class="text-secondary mb-0">Portfolio</h3>
+            <h2 class="mb-5">React Projects</h2>
+          </div>
+          <div class="row no-gutters">
+            <div class="col-lg-6">
+              <a
+                class="portfolio-item"
+                href="https://vigorous-stonebraker-afc307.netlify.app/"
+              >
+                <span class="caption">
+                  <span class="caption-content">
+                    <h2>Demo Version</h2>
+                    <p class="mb-0">
+                      Just a little piece of the whole project.
+                      Which you can see or download below.
+                    </p>
+                  </span>
+                </span>
+                <img class="img-fluid" src="img/home.png" alt="" />
+              </a>
+            </div>
+            <div class="col-lg-6">
+              <a
+                class="portfolio-item"
+                href="https://awesome-stonebraker-1b3e35.netlify.app"
+              >
+                <span class="caption">
+                  <span class="caption-content">
+                    <h2>Online Store</h2>
+                    <p class="mb-0">
+                      This project was part of a course in Udemy Academy.
+                      Context and Styled-Components are used .
+                    </p>
+                  </span>
+                </span>
+                <img class="img-fluid" src="img/store-home.png" alt="" />
+              </a>
+            </div>
+            <div class="col-lg-6">
+              <a
+                class="portfolio-item"
+                href="https://jolly-hawking-705b45.netlify.app/"
+              >
+                <span class="caption">
+                  <span class="caption-content">
+                    <h2>Hotel Booking Sait</h2>
+                    <p class="mb-0"> Another project from a course in Udemy Academy.
+                      with Context and the data is connected by Contentful .</p>
+                  </span>
+                </span>
+                <img class="img-fluid" src="img/hotel.png" alt="" />
+              </a>
+            </div>
+            <div class="col-lg-6">
+              <a
+                class="portfolio-item"
+                href="https://reverent-benz-ba4535.netlify.app/"
+              >
+                <span class="caption">
+                  <span class="caption-content">
+                    <h2>Budget Calculator</h2>
+                    <p class="mb-0">Hooks Project</p>
+                  </span>
+                </span>
+                <img class="img-fluid" src="img/react-calc.png" alt="" />
+              </a>
+            </div>
+            
+            <div class="col-lg-6">
+              <a
+                class="portfolio-item"
+                href="https://elegant-mahavira-28329e.netlify.app/"
+              >
+                <span class="caption">
+                  <span class="caption-content">
+                    <h2>Test Applying for job</h2>
+                    <p class="mb-0">Bulding layout page and functionalities from design</p>
+                  </span>
+                </span>
+                <img class="img-fluid" src="img/work.png" alt="" />
+              </a>
+            </div>
+
+          </div>
+          <div class="content-section-heading text-center">
+            
+            <h2 class="mb-5 vanila-title">VanilaJS Projects</h2>
+          </div>
+          <div class="row no-gutters">
+            <div class="col-lg-6">
+              <a
+                class="portfolio-item"
+                href="https://relaxed-roentgen-dce131.netlify.app"
+              >
+                <span class="caption">
+                  <span class="caption-content">
+                    <h2>Online Store</h2>
+                    <p class="mb-0">
+                     for furniture but could be anything else.
+                    </p>
+                  </span>
+                </span>
+                <img class="img-fluid" src="img/furniture.png" alt="" />
+              </a>
+            </div>
+            <div class="col-lg-6">
+              <a
+                class="portfolio-item"
+                href="https://objective-nightingale-660bb2.netlify.app/"
+              >
+                <span class="caption">
+                  <span class="caption-content">
+                    <h2>Budget Calculator</h2>
+                    <p class="mb-0">
+                     it can calculate your expenses
+                    </p>
+                  </span>
+                </span>
+                <img class="img-fluid" src="img/calc.png" alt="" />
+              </a>
+            </div>
+            <div class="col-lg-6">
+              <a
+                class="portfolio-item"
+                href="https://veskostoyanov.github.io/Time-Converter-vanila-onePage/"
+              >
+                <span class="caption">
+                  <span class="caption-content">
+                    <h2>Converter</h2>
+                    <p class="mb-0">
+                     Simple one page project.
+                    </p>
+                  </span>
+                </span>
+                <img class="img-fluid" src="img/conventor.png" alt="" />
+              </a>
+            </div>
+            <div class="col-lg-6">
+              <a
+                class="portfolio-item"
+                href="https://veskostoyanov.github.io/changeColor-vanila-onePage/"
+              >
+                <span class="caption">
+                  <span class="caption-content">
+                    <h2>Background color changer</h2>
+                    <p class="mb-0">
+                     Simple one page project.
+                    </p>
+                  </span>
+                </span>
+                <img class="img-fluid" src="img/color.png" alt="" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="view intro-video">
+        <div class="hm-gradient">
+          <div class="full-bg-img">
+            <div class="container flex-center">
+              <div class="row pt-5 mt-3">
+                <div class="col-lg-6 wow fadeIn mb-5 text-center text-lg-left">
+                  <div class="white-text">
+                    <h1
+                      class="h1-responsive font-weight-bold wow fadeInLeft"
+                      data-wow-delay="0.3s"
+                    >
+                      Don't have time to install
+                    </h1>
+                    <hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s" />
+                    <p class="wow fadeInLeft" data-wow-delay="0.3s">
+                      This is a fast preview what can be done in the project.
+                      There is a guid how to download it from github and install
+                      It requires mongoDb
+                      Database, "nodemon": "npm install -g nodemon",
+                      "concurrently": "npm install -g concurrently", which
+                      installs all dependencies on both server and clien through
+                      one console: "npm run install-all" -> "npm run dev". It
+                      runs on localhost:3000
+                    </p>
+                    
+                    <a
+                    href="https://github.com/veskoStoyanov/PROJECTS/tree/master/Motors-Full-Version-React"
+                      class="btn btn-outline-white wow fadeInLeft"
+                      data-wow-delay="0.3s"
+                      >Get the full version</a
+                    >
+                  </div>
+                </div>
+                <div class="col-lg-6 wow fadeIn">
+                  <div
+                    class="embed-responsive embed-responsive-16by9 wow fadeInRight"
+                  >
+                    <iframe
+                      class="embed-responsive-item"
+                      src="./img/vid.mp4?
+					  autoplay=true
+					  mute=true&"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+
+      <div class="footer text-center">
+        <div class="container">
+          <ul class="list-inline mb-5">
+            <li class="list-inline-item">
+              <a
+                class="social-link rounded-circle text-white mr-3"
+                href="https://softuni.bg/certificates/details/80847/969665d7"
+              >
+                <i class="fas fa-graduation-cap"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a
+                class="social-link rounded-circle text-white mr-3"
+                href="https://www.linkedin.com/in/vesko-stoyanov-5072411a6/"
+              >
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a
+                class="social-link rounded-circle text-white"
+                href="https://github.com/veskoStoyanov?tab=repositories"
+              >
+                <i class="icon-social-github"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+     
+      <section class='section'>
+        <div class='masthead-image' id='master-container'>
+            <div class='content center'>
+                <h1 id='master'>
+                  
+                  <div id='master-container-scroller'>
+                    <div class='master-container-scroller_item'>
+                      <a class='cta-link' href='index2.html'>Go To</a>.
+                    </div>
+                    <div class='master-container-scroller_item'>
+                      <a class='cta-link' href='index2.html'>The NExt</a>.
+                    </div>
+                    <div class='master-container-scroller_item'>
+                      <a class='cta-link' href='index2.html'>Page</a>.
+                    </div>
+                    <div class='master-container-scroller_item'>
+                      <a class='cta-link' href='index2.html'>Go To</a>.
+                    </div>
+                    <div class='master-container-scroller_item'>
+                      <a class='cta-link' href='index2.html'>The NExt</a>.
+                    </div>
+                    <div class='master-container-scroller_item'>
+                      <a class='cta-link' href='index2.html'>Page</a>.
+                    </div>
+                    <div class='master-container-scroller_item'>
+                      <a class='cta-link' href='index2.html'>Go To</a>.
+                    </div>
+                    <div class='master-container-scroller_item'>
+                      <a class='cta-link' href='index2.html'>The NExt</a>.
+                    </div>
+                    <div class='master-container-scroller_item'>
+                      <a class='cta-link' href='index2.html'>Page</a>.
+                    </div>
+                  </div>
+                  
+                </h1>
+            </div>
+        </div>
+    </section>
+      <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+        <div class="container text-center">
+          <small>Copyright &copy; Your Website</small>
+          <p class="text-muted small mb-0">
+            &copy;Created By Vesko Stoyanov 2020
+          </p>
+        </div>
+      </footer>
+
+      <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+      </a>
+
+        
+    </main>
+    <script src="js/demo.js"></script>
+    <script src="js/anime.min.js"></script>
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/stylish-portfolio.min.js"></script>
+  </body>
+</html>

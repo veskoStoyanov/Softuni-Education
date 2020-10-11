@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MyPortfolio</title>
+    <meta
+      name="description"
+      content="A CSS Grid powered menu with a box look"
+    />
+    <meta
+      name="keywords"
+      content="menu, css grid, box, navigation, web development, animation"
+    />
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+    <meta name="author" content="Codrops" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <link rel="stylesheet" type="text/css" href="css/demo2.css" />
+    <link rel="stylesheet" href="css/work.css" />
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/btn.css">
+   <script>
+      document.documentElement.className = "js";
+      var supportsCssVars = function () {
+        var e,
+          t = document.createElement("style");
+        return (
+          (t.innerHTML = "root: { --tmp-var: bold; }"),
+          document.head.appendChild(t),
+          (e = !!(
+            window.CSS &&
+            window.CSS.supports &&
+            window.CSS.supports("font-weight", "var(--tmp-var)")
+          )),
+          t.parentNode.removeChild(t),
+          e
+        );
+      };
+      supportsCssVars() ||
+        alert(
+          "Please view this demo in a modern browser that supports CSS Variables."
+        );
+    </script>
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Custom Fonts -->
+    <link
+      href="vendor/fontawesome-free/css/all.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="vendor/simple-line-icons/css/simple-line-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link href="css/stylish-portfolio.min.css" rel="stylesheet" />
+    <link
+      href="http://fonts.googleapis.com/css?family=Montserrat:700"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+  <body id="page-top" class="demo-2 loading">
+    <a class="menu-toggle rounded" href="#">
+      <i class="fas fa-bars"></i>
+    </a>
+    <nav id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+        <li class="sidebar-brand">
+          <a class="js-scroll-trigger" href="index.html">My Portfolio</a>
+        </li>
+        <li class="sidebar-nav-item">
+          <a class="js-scroll-trigger" href="#page-top">Home</a>
+        </li>
+        <li class="sidebar-nav-item">
+          <a class="js-scroll-trigger" href="#recreated">Recreated Pages</a>
+        </li>
+        <li class="sidebar-nav-item">
+          <a class="js-scroll-trigger" href="#exercises">Exercises</a>
+        </li>
+      </ul>
+    </nav>
+    <main>
+  
+      <div class="header">
+        <div class="overlay"></div>
+        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+          <source src="./img/Entering The Stronghold _ Audio Visual Animation    HD!.mp4" type="video/mp4">
+        </video>
+        <div class=" container h-100">
+          <div class=" header-text d-flex h-100 text-center align-items-center">
+            <div class="w-100 text-white">
+              <h1 class="display-3 text-anim">What else can I show you...</h1>   
+            </div>
+          </div>
+        </div>
+      </div>
+      
+ 
+      <div id="exercises" class="table">
+        <!-- Classic tabs -->
+        <div class="classic-tabs mx-2">
+          <ul class="nav tabs-cyan" id="myClassicTabShadow" role="tablist">
+            <li id="golded" class="nav-item">
+              <a
+                class="golden nav-link waves-light active show"
+                id="profile-tab-classic-shadow"
+                data-toggle="tab"
+                href="#profile-classic-shadow"
+                role="tab"
+                aria-controls="profile-classic-shadow"
+                aria-selected="true"
+                >OOP problem</a
+              >
+            </li>
+            <li id="golded" class="golden nav-item">
+              <a
+                class="nav-link waves-light"
+                id="follow-tab-classic-shadow"
+                data-toggle="tab"
+                href="#follow-classic-shadow"
+                role="tab"
+                aria-controls="follow-classic-shadow"
+                aria-selected="false"
+                >Solution</a
+              >
+            </li>
+            <li id="golded" class="nav-item">
+              <a
+                class="nav-link waves-light"
+                id="contact-tab-classic-shadow"
+                data-toggle="tab"
+                href="#contact-classic-shadow"
+                role="tab"
+                aria-controls="contact-classic-shadow"
+                aria-selected="false"
+                >Array problem</a
+              >
+            </li>
+            <li id="golded" class="nav-item">
+              <a
+                class="nav-link waves-light"
+                id="awesome-tab-classic-shadow"
+                data-toggle="tab"
+                href="#awesome-classic-shadow"
+                role="tab"
+                aria-controls="awesome-classic-shadow"
+                aria-selected="false"
+                >Solution</a
+              >
+            </li>
+          </ul>
+  
+          <div class="tab-content card" id="myClassicTabContentShadow">
+            <div
+              class="tab-pane fade active show"
+              id="profile-classic-shadow"
+              role="tabpanel"
+              aria-labelledby="profile-tab-classic-shadow"
+            >
+              <!--Intro Section-->
+             <div class="text-container">
+              <h3>Write a JavaScript class Hotel which has the following functionality:</h3>
+               <h5>Constructor</h5>
+                <p>You should implement at least these properties:</p>
+                <ul>
+                  <li>name - string</li>
+                  <li>capacity - number</li>
+                  <li>bookings - array</li>
+                  <li>currentBookingNumber - number, initialized as ‘1’</li>
+                </ul>
+                
+                <h6>At initialization of the Hotel class, the constructor receives only 2 parameters (name, capacity).</h6> 
+                <p>The bookings property needs to be empty by default.</p>
+                <ul>
+                  <li>The name property refers to the hotel's name.</li>
+                  <li>The capacity property refers for the count of the hotel's rooms.
+  
+                    <ul>
+                      <li>The single rooms are 50 % of the given capacity</li>
+                  <li>The double rooms are 30 % of the given capacity</li>
+                  <li>The maisonette rooms are 20 % of the given capacity</li>
+                  <li>NOTE: All room counts should be integers.</li>
+                    </ul>
+                  </li>
+                  
+                </ul>
+                
+                <h5>Accessors</h5>
+                <p class="function">roomsPricing</p><p>- Returns an object, containing the following properties:</p>
+                <ul>
+                <li>single: 50 (price per night)</li>
+                <li>double: 90 (price per night)</li>
+                <li>maisonette: 135 (price per night)</li>
+                </ul>
+                class="function">servicesPricing</p>
+                <p> - Returns an object, containing the following properties:
+               <ul>
+                <li>food: 10 (per order)</li>
+                <li>drink: 15 (per order)</li>
+                <li>ousekeeping: 25 (per order)</li>
+               </ul>
+                <h5>Functions</h5>
+                <p class="function">rentARoom({clientName}, {roomType}, {nights})</p>
+                 <p>Receive 3 parameters:  clientName (string), roomType (string), nights (number) </p>
+                <p>If the hotel has available rooms of the requested roomType, you should create an object for the current client’s booking which contains properties for (client name, room type, nights, and room number) and store it into the bookings property.</p> 
+                <ul>
+                  <li>You should also increase the currentBookingNumber by 1. The first given currentBookingNumber is 1.</li>
+                <li>You should also decrease the capacity of the requested roomType rooms by 1.</li>
+                </ul>
+                <p>Then you should return a string, in the following format:</p>
+                <p><i>"Enjoy your time here Mr./Mrs. {clientName}. Your booking is {currentBookingNumber}."</i></p>
+                
+                <h6>Validations</h6>
+                <li>If there are NO available rooms of the requested roomType, the function should return a string, consisting of the message: "No {roomType} rooms available!"</li>
+                <p>And for each of the other available room types, you should append a string to the message in the following format:</p>
+                <p>"Available {roomType} rooms: {roomTypeRoomsRemaining}."</p>
+                <p>Example:</p>
+               <i> "No single rooms available! Available double rooms: 2. Available maisonette rooms: 1."</i>
+               
+        
+               <p>
+                <span class="function">roomService({currentBookingNumber}, {serviceType})</span>
+               </p>
+                <p>Receive two parameters: currentBookingNumber (number) and serviceType (string)</p>
+                <p>You should create an additional property for the booking with the given currentBookingNumber, called services (array), and add the given serviceType to it (if it is already created, just add the new serviceType to it).</p>
+                <strong>NOTE: The services property contains an array of strings (serviceTypes). You may add the same serviceType multiple times.</strong>
+                <p>Then you should return a string, in the following format:</p>
+                <p><i>"Mr./Mrs. {clientName}, Your order for {serviceType} service has been successful."</i></p>
+                <h6>Validations</h6>
+  
+                <ul>
+                  <li>If the given currentBookingNumber is invalid (non-existent)
+                    return the following string: <i>"The booking {currentBookingNumber} is invalid."</i></li>
+                    <li>If the requested service is invalid, return the following string: <i>"We do not offer {serviceType} service."</i></li>
+                </ul>
+           
+             <p>checkOut({currentBookingNumber})</p>
+               <p>Receive one parameter - currentBookingNumber (number)</p>
+                <ul>
+                  <li>You should calculate the due amount, as totalMoney, for the booking with the given currentBookingNumber, depending on the nights spent and the price of the roomType.</li>
+                <li>You should also increase the capacity of the given roomType rooms by 1.
+                  Then you should return a string, in the following format: <i>"We hope you enjoyed your time here, Mr./Mrs. {clientName}. The total amount of money you have to pay is {totalMoney} BGN."</i></li>
+               <li>If the booking contains services, you should calculate the total price for all the services, as totalServiceMoney.
+                Then you should return a string, in the following format: <i>"We hope you enjoyed your time here, Mr./Mrs. {clientName}. The total amount of money you have to pay is {totalMoney + totalServiceMoney} BGN. You have used additional room services, costing {totalServiceMoney} BGN."</i></li>
+                </ul>
+              
+               <h6> Validations</h6>
+  
+               <ul>
+                 <li>If the given currentBookingNumber is invalid (non-existent)
+                  return the following string: <i> "The booking {currentBookingNumber} is invalid."</i></li>
+                </ul>
+                
+               
+                <p class="function">report()</p>
+           
+                <p>This function represents the hotel's "database". Prints information about each booking.</p>
+               <p> The information should be presented in the following format:</p>
+                <i> <p>"{hotelName.toUpperCase()} DATABASE:</p>
+                  <p>-------------------- (separate the header and bookings information - 20 dashes)</p>
+                  <p>bookingNumber – {bookingNumber}</p>
+                  <p>clientName – {clientName}</p>
+                 <p> roomType – {roomType}</p>
+                  <p>nights – {nights}</p>
+                  <p>services: {services} (Optional. Only for those bookings who have used room services. The services should be joined with a comma and a space.)</p>
+                 <p> ---------- (booking separator - 10 dashes)</p>
+                  <p>...</p></i>
+                <h6>Validations</h6>
+                <ul>
+                  <li>If there are no bookings, return the following string: <i>"{hotelName.toUpperCase()} DATABASE:
+                    -------------------- (separate the header and bookings information - 20 dashes)
+                   There are currently no bookings."</i></li>
+                </ul>
+                
+                
+                <p><strong>Constraints</strong></p>
+                <p>The given capacity will greater or equal to 10.</p>
+               
+                
+                <h6>Examples</h6>
+  
+                <div class="examples">
+                  <p>let hotel = new Hotel('HotUni', 10);</p>
+  
+  <p>console.log(hotel.rentARoom('Peter', 'single', 4));</p>
+  <p>console.log(hotel.rentARoom('Robert', 'double', 4));</p>
+  <p>console.log(hotel.rentARoom('Geroge', 'maisonette', 6));</p>
+             
+                  <h6>Output</h6>
+                 <p> Enjoy your time here Mr./Mrs. Peter. Your booking is 1.</p>
+  <p>Enjoy your time here Mr./Mrs. Robert. Your booking is 2.</p>
+  <p>Enjoy your time here Mr./Mrs. Geroge. Your booking is 3.</p>
+  
+             </div>
+  
+             <div class="examples">
+              <p>let hotel = new Hotel('HotUni', 10);</p>
+  
+  <p>hotel.rentARoom('Peter', 'single', 4);</p>
+  <p>hotel.rentARoom('Robert', 'double', 4);</p>
+  <p>hotel.rentARoom('Geroge', 'maisonette', 6);</p>
+  
+  <p>console.log(hotel.roomService(3, 'housekeeping'));</p>
+  <p>console.log(hotel.roomService(3, 'drink'));</p>
+  <p>console.log(hotel.roomService(2, 'room'));</p>        
+              <h6>Output</h6>
+             <p> Mr./Mrs. Geroge, Your order for housekeeping service has been successful.</p>
+              <p>Mr./Mrs. Geroge, Your order for drink service has been successful.</p>
+              <p>We do not offer room service.</p>
+            
+         </div>
+  
+             </div>
+  
+              <!--Main Navigation-->
+            </div>
+            <div
+              class="code-container tab-pane fade"
+              id="follow-classic-shadow"
+              role="tabpanel"
+              aria-labelledby="follow-tab-classic-shadow"
+            >
+              <p>
+                <code>
+                  <p>class Hotel {</p>
+                  <p class="two">constructor(name, capacity) {</p>
+                  <p class="three">this.name = name;</p>
+                  <p class="three">this.capacity = capacity;</p>
+                  <p class="three">this.bookings = [];</p>
+                  <p class="three">this.currentBookingNumber = 1;</p>
+                  <p class="three">this.available = {</p>
+                  <p class="three">single: Math.floor(capacity * 0.5),</p>
+                  <p class="three">double: Math.floor(capacity * 0.3),</p>
+                  <p class="three">maisonette: Math.floor(capacity * 0.2)</p>
+                  <p class="two">}</p>
+  
+                  <p class="two">this.roomsPricing = {</p>
+                  <p class="three">single: 50,</p>
+                  <p class="three">double: 90,</p>
+                  <p class="three">maisonette: 135</p>
+                  <p class="two">}</p>
+                  <p class="two">this.servicesPricing = {</p>
+                  <p class="three">food: 10,</p>
+                  <p class="three">drink: 15,</p>
+                  <p class="three">housekeeping: 25</p>
+                  <p class="two">}</p>
+                  <p>}</p>
+  
+                  <p>rentARoom(clientName, roomType, nights) {</p>
+  
+                  <p class="two">if (this.available[roomType] === 0) {</p>
+                  <p class="three">let arr = [];</p>
+                  <p class="three">
+                    arr.push(`No ${roomType} rooms available!`);
+                  </p>
+                  <p class="three">
+                    let keys = Object.keys(this.available).filter((r) =>
+                    this.available[r] > 0);
+                  </p>
+  
+                  <p class="three">for (const key of keys) {</p>
+                  <p class="three">
+                    rr.push(`Available ${key} rooms: ${this.available[key]}.`)
+                  </p>
+                  <p class="two">}</p>
+  
+                  <p class="three">return arr.join(' ');</p>
+                  <p class="two">}</p>
+                  <br />
+                  <p class="two">
+                    let price = this.roomsPricing[roomType] * nights;
+                  </p>
+  
+                  <p class="two">let roomNumber = this.currentBookingNumber;</p>
+                  <p class="two">
+                    this.bookings.push({ clientName, roomType, nights,
+                    roomNumber, price });
+                  </p>
+                  <p class="two">
+                    let text = `Enjoy your time here Mr./Mrs. ${clientName}.
+                    Your booking is ${this.currentBookingNumber}.`;
+                  </p>
+  
+                  <p class="two">this.currentBookingNumber += 1;</p>
+                  <p class="two">this.available[roomType] -= 1;</p>
+  
+                  <p class="two">return text;</p>
+                  <p>}</p>
+  
+                  <p>roomService(currentBookingNumber, serviceType) {</p>
+                  <p class="two">
+                    let obj = this.bookings.filter((x) => x.roomNumber ===
+                    currentBookingNumber)[0];
+                  </p>
+  
+                  <p class="two">if (!obj) {</p>
+                  <p class="two">
+                    return `The booking ${currentBookingNumber} is invalid.`
+                  </p>
+                  <p class="two">
+                    } if (!this.servicesPricing.hasOwnProperty(serviceType)) {
+                  </p>
+                  <p class="two">
+                    return `We do not offer ${serviceType} service.`;
+                  </p>
+                  <p>}</p>
+  
+                  <p class="two">
+                    let price = this.servicesPricing[serviceType];
+                  </p>
+                  <p class="two">obj.price += price;</p>
+  
+                  <p class="two">if (!obj.hasOwnProperty('service')) {</p>
+                  <p class="two">obj['service'] = 0;</p>
+                  <p class="two">obj['services'] = [];</p>
+  
+                  <p>}</p>
+  
+                  <p class="two">obj['service'] += price;</p>
+                  <p class="two">obj['services'].push(serviceType);</p>
+  
+                  <p class="two">
+                    return `Mr./Mrs. ${obj.clientName}, Your order for
+                    ${serviceType} service has been successful.`;
+                  </p>
+  
+                  <p>}</p>
+  
+                  <p>checkOut(currentBookingNumber) {</p>
+                  <p class="two">
+                    let obj = this.bookings.filter((x) => x.roomNumber ===
+                    currentBookingNumber)[0];
+                  </p>
+  
+                  <p class="two">if (!obj) {</p>
+                  <p class="two">
+                    return `The booking ${currentBookingNumber} is invalid.`
+                  </p>
+                  <p>}</p>
+  
+                  <p class="two">this.available[obj.roomType] += 1;</p>
+  
+                  <p class="three">if (obj.hasOwnProperty('service')) {</p>
+                  <p class="two">
+                    return `We hope you enjoyed your time here, Mr./Mrs.
+                    ${obj.clientName}. The total amount of money you have to pay
+                    is ${obj.price} BGN. You have used additional room services,
+                    costing ${obj.service} BGN.`
+                  </p>
+                  <p class="two">} else {</p>
+                  <p class="two">
+                    return `We hope you enjoyed your time here, Mr./Mrs.
+                    ${obj.clientName}. The total amount of money you have to pay
+                    is ${obj.price} BGN.`
+                  </p>
+                  <p class="two">}</p>
+                  <p>}</p>
+                  <p>report() {</p>
+  
+                  <p class="two">let result = [];</p>
+                  <p class="two">
+                    result.push(`${this.name.toUpperCase()} DATABASE:`);
+                  </p>
+                  <p class="two">result.push('--------------------')</p>
+  
+                  <p class="two">if (this.bookings.length === 0) {</p>
+                  <p class="two">
+                    result.push(`There are currently no bookings.`)
+                  </p>
+                  <p class="two">return result.join('\n');</p>
+  
+                  <p>}</p>
+  
+                  <p class="two">
+                    for (let i = 0; i < this.bookings.length; i++) {
+                  </p>
+                  <p class="three">let obj = this.bookings[i];</p>
+                  <p class="three">
+                    result.push(`bookingNumber - ${obj.roomNumber}`);
+                  </p>
+                  <p class="three">
+                    result.push(`clientName - ${obj.clientName}`);
+                  </p>
+                  <p class="three">
+                    result.push(`roomType - ${obj.roomType}`);
+                  </p>
+                  <p class="three">result.push(`nights - ${obj.nights}`);</p>
+  
+                  <p class="three">if (obj.hasOwnProperty('services')) {</p>
+                  <p class="three">
+                    result.push(`services: ${obj['services'].join(', ')}`);
+                  </p>
+                  <p>}</p>
+  
+                  <p class="two">if (i+1 !== this.bookings.length) {</p>
+                  <p class="two">result.push('----------');</p>
+                  <p class="two">}</p>
+                  <p>}</p>
+                  <p class="two">return result.join('\n')</p>
+                  <p class="two">}</p>
+                  <p>}</p>
+                </code>
+              </p>
+            </div>
+            <div
+              class="tab-pane fade"
+              id="contact-classic-shadow"
+              role="tabpanel"
+              aria-labelledby="contact-tab-classic-shadow"
+            >
+              
+             
+      <div class="text-container">
+        <h6>Problem 2. Plasma Giants</h6>
+        <p>You will receive 2 arguments - an array and a number.</p>
+        <p>The array represents the plasma you need to cut in 2 pieces. The 2 pieces will form 2 giants that will fight each other. That is how it works:
+        </p>
+        <ul>
+          <li>First, you have to cut the array into 2 equal pieces. </li>
+          <li>Then, you have to use the second argument (the number - the size of the cut) to create a giant. When you already have the arrays from the first cut, you take them and cut each of them by the size cut. 
+         <ul>
+           <li>Example: If we receive an array [1,2,3,4,5,6,7,8,9,10,11,12] and the second argument is 3. First, we have to cut the array into 2 equal pieces. The result will be [1,2,3,4,5,6] for the first part and [7,8,9,10,11,12] for the second part. After that we see out cut size is 3. We split each of the arrays (first part and second part) into N array each of them has 3 (cut size) elements. The result will be [1,2,3] and [4,5,6] for the first part and [7,8,9] and [10,11,12] for the second part.
+          </li>
+         </ul>
+          </li>
+          <li>After we have the pieces (arrays after the cut size) for both sides, we must find the product for each of them.
+         <ul>
+           <li>Example: After the cut size, we have [1,2,3] , [4,5,6] for the first part and [7,8,9] , [10,11,12] for the second part. The result will be: 1 * 2 * 3 = 6; 4 * 5 * 6 = 120; [6,120] for the first part and 7 * 8 * 9 = 504; 10 * 11 * 12 = 1320; [504,1320] for the second part.
+          </li>
+         </ul>
+          </li>
+          <li>Finally, to build these giants and put them into a fight we have to find the sum of these products.
+         <ul>
+           <li>The first giant will be 6 + 120 = 126, and the second giant will be 504 + 1320 = 1824
+          </li>
+         <li>The fight rules are simple:
+<ul>
+  <li>Each of the giants has the same damage per hit which is the smallest number from the originally received array, in our case ([1,2,3,4,5,6,7,8,9,10,11,12]) that's 1. When they hit, you have to decrease the giant number with that damage per hit. They hit each other at the same time.</li>
+<li>The fight stops, when one of them reaches the biggest number from the originally received array or less, in our case that’s 12. Also, you have to keep track of the rounds of the fight. 1 round is completed when they hit each other once.
+</li>
+</ul>
+
+        </li>
+        </ul>
+          </li>
+          <li>At the end, you have to print the giant who won the fight and number of rounds.
+          </li>
+        </ul>
+        <h6>INPUT</h6>
+        <ul>
+          <li>2 arguments. The first one is an array and the second one is a number</li>
+        </ul>
+        <h6>OUTPUT</h6>
+        <p>If we have a winner, the corresponding output must be:
+        </p>
+        <i><strong>"{First/Second} Giant defeated {First/Second} Giant with result ${winnerGiantPoints} - ${defeatedGiantPoints} in ${rounds} rounds"</strong></i>
+    <br>
+        <p>Otherwise:
+    </p>
+     <i><strong>"Its a draw {firstGiantPoints} – {secondGiantPoints}"</strong></i>
+ 
+     <h6>Constraints</h6>
+ 
+ <ul>
+   <li>The incoming array always will be divided into the cut size without reminder</li>
+  <li>The incoming array will contain numbers greater or equal than 0
+  </li>
+  <li>The cut size will be number greater or equal than 0
+  </li>
+ </ul>
+ <h6>Example</h6>
+ <p>Input</p>
+ <h6>[3, 3, 3, 4, 5, 6, 7, 8, 9, 10, 5, 4], 2</h6>
+ <p>Output</p>
+ <h6>Second Giant defeated First Giant with result 124 - 9 in 15 rounds</h6>
+ <p>Input</p>
+ <h6>[4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], 2</h6>
+ <p>Output</p>
+ <h6>Its a draw 4 - 4</h6>
+    </div>
+            </div>
+            <div
+              class="code-container tab-pane fade"
+              id="awesome-classic-shadow"
+              role="tabpanel"
+              aria-labelledby="awesome-tab-classic-shadow"
+            >
+              <p>
+                <code>
+                  <p>function solve(array, cutSize) {   </p>
+                   <p class="two">let firstPart = array.slice(0, array.length / 2);</p>
+                    <p class="two">let secPart = array.slice(array.length / 2);</p>
+                    <p class="two">let firstLife = 0;</p>
+                    <p class="two">let secLife = 0;</p>
+                
+                    <p class="two">while (firstPart.length > 0 && secPart.length > 0) {</p>
+                        <p class="three">firstLife += firstPart.splice(0, cutSize).reduce((a, b) => a * b);</p>
+                        <p class="three">secLife += secPart.splice(0, cutSize).reduce((a, b) => a * b);</p>
+                    }
+                
+                    <p class="two">let damage = Math.min(...array);</p>
+                    <p class="two">let health = Math.max(...array);</p>
+                   <p class="two">let rounds = 1;</p>
+                    <p class="two">if (damage !== 0) {</p>
+                        <p class="two">while (firstLife > health && secLife > health) {</p>
+                            <p class="three">firstLife -= damage;</p>
+                            <p class="three">secLife -= damage;</p>
+                           <p class="three"> rounds++;</p>
+                        <p class="two">}</p>
+                    <p>}</p>
+                
+                    <p class="two">if (firstLife === secLife) {</p>
+                        <p class="three">console.log(`Its a draw ${Math.round(firstLife)} - ${Math.round(secLife)}`);</p>
+                    <p class="two">} else if (firstLife > secLife) {</p>
+                        <p class="three">console.log(`First Giant defeated Second Giant with result ${firstLife} - ${secLife} in ${rounds} rounds`);</p>
+                    <p class="two">} else {</p>
+                     
+                      <p class="three"> console.log(`Second Giant defeated First Giant with result ${secLife} - ${firstLife} in ${rounds} rounds`);</p>
+                   <p class="two">}</p>   
+                <p>}</p>
+                <p class="two">solve();</p>
+                </code>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+        <div class="hidden content content--fixed">
+          <nav class="demos">
+            <a class="demo demo--current" href="index.html">Portfolio</a>
+            <a class="demo demo--current" href="index.html"></a>
+          </nav>
+          <button
+            type="button"
+            id="effects-btn"
+            class="menu-trigger btn btn-outline-info"
+          >
+            + effects
+          </button>
+        </div>
+        
+        <section id="recreated" class="content-section bg-primary text-white">
+          <div class="container text-center">
+            <h2 class="mb-4">HTML, CSS and Jquery!</h2>
+            <a
+            href="https://veskostoyanov.github.io/musicPage-onepage/"
+            class="btn btn-xl btn-dark"
+            ><img src="./img/music.png" alt="something"
+          /></a>
+          <a
+          href="https://veskostoyanov.github.io/GridLayout-onepage/"
+          class="btn btn-xl btn-dark"
+          ><img src="./img/grid.png" alt="something"
+        /></a>
+        <a
+        href="https://veskostoyanov.github.io/Plural-onepage/"
+        class="btn btn-xl btn-dark"
+        ><img src="./img/plural.png" alt="something"
+      /></a>
+        <a
+              href="https://veskostoyanov.github.io/MicrosoftHomePage-onepage/"
+              class="btn btn-xl btn-dark pages"
+              ><img src="./img/mic.png" alt="picher"
+            /></a>
+            <a
+              href="https://veskostoyanov.github.io/JekyllTheme-onepage/"
+              class="btn btn-xl btn-dark"
+              ><img src="./img/jekyll.png" alt="something"
+            /></a>
+            <a
+            href="https://keen-kare-ee2770.netlify.app/"
+            class="btn btn-xl btn-dark"
+            ><img src="./img/grid-template.png" alt="something"
+          /></a>
+          </div>
+        </section>
+
+         <!-- Portfolio -->
+      <section class="content-section" id="portfolio">
+        <div class="container">
+          <div class="content-section-heading text-center">
+            <h2 class="mb-5">VueJS Projects</h2>
+          </div>
+          <div class="row no-gutters">
+            <div class="col-lg-6">
+              <a
+                class="portfolio-item"
+                href="https://vigorous-stonebraker-afc307.netlify.app/"
+              >
+                <span class="caption">
+                  <span class="caption-content">
+                    <h2>Demo Version</h2>
+                    <p class="mb-0">
+                      Just a little piece of the whole project.
+                      Which you can see or download below.
+                    </p>
+                  </span>
+                </span>
+                <img class="img-fluid" src="img/home.png" alt="" />
+              </a>
+            </div>
+      </section>
+      
+        <div class="hidden">
+        <div id="content-2" class="content content--switch">
+          <h2 class="content__title">Beach</h2>
+          <div class="content__subtitle">Lift your spirits</div>
+        </div>
+        <div id="content-3" class="content content--switch">
+          <h2 class="content__title">Desert</h2>
+          <div class="content__subtitle">Find yourself</div>
+        </div>
+        <div id="content-4" class="content content--switch">
+          <h2 class="content__title">Ocean</h2>
+          <div class="content__subtitle">Uncover beauty</div>
+        </div>
+        <div id="content-5" class="content content--switch">
+          <h2 class="content__title">Jungle</h2>
+          <div class="content__subtitle">Feel nature</div>
+        </div>
+        <div id="content-6" class="content content--switch">
+          <h2 class="content__title">Mountains</h2>
+          <div class="content__subtitle">Explore your limits</div>
+        </div>
+        <nav class="grim">
+          <div class="grim__item">
+            <div class="grim__item-bg grim__item-bg--1"></div>
+          </div>
+          <div class="grim__item">
+            <div class="grim__item-bg grim__item-bg--2"></div>
+          </div>
+          <div class="grim__item">
+            <div class="grim__item-bg grim__item-bg--3"></div>
+            <div class="grim__item-content">
+              <div class="grim__item-inner">
+                <button class="menu-trigger menu-trigger--close">
+                  - close
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="grim__item">
+            <div class="grim__item-bg grim__item-bg--4"></div>
+          </div>
+          <div class="grim__item">
+            <div class="grim__item-bg grim__item-bg--5"></div>
+            <a href="#content-1" class="grim__link grim__item-content">
+              <div class="grim__item-inner">
+                <h3 class="grim__item-title">Home</h3>
+              </div>
+            </a>
+          </div>
+          <div class="grim__item">
+            <div class="grim__item-bg grim__item-bg--6"></div>
+            <div
+              class="grim__item-img grim__item-img--1"
+              style="background-image: url(img/1.jpg);"
+            ></div>
+            <a href="#content-2" class="grim__link grim__item-content">
+              <div class="grim__item-inner">
+                <h3 class="grim__item-title">Beach</h3>
+                <span class="grim__item-desc">Lift your spirits</span>
+              </div>
+            </a>
+            <div
+              class="grim__item-bg grim__item-bg-cover grim__item-bg--6"
+            ></div>
+          </div>
+          <div class="grim__item">
+            <div class="grim__item-bg grim__item-bg--7"></div>
+            <div
+              class="grim__item-img grim__item-img--2"
+              style="background-image: url(img/2.jpg);"
+            ></div>
+            <a href="#content-3" class="grim__link grim__item-content">
+              <div class="grim__item-inner">
+                <h3 class="grim__item-title">Desert</h3>
+                <span class="grim__item-desc">Find yourself</span>
+              </div>
+            </a>
+            <div
+              class="grim__item-bg grim__item-bg-cover grim__item-bg--7"
+            ></div>
+          </div>
+          <div class="grim__item">
+            <div class="grim__item-bg grim__item-bg--8"></div>
+            <div
+              class="grim__item-img grim__item-img--3"
+              style="background-image: url(img/3.jpg);"
+            ></div>
+            <a href="#content-4" class="grim__link grim__item-content">
+              <div class="grim__item-inner">
+                <h3 class="grim__item-title">Ocean</h3>
+                <span class="grim__item-desc">Uncover beauty</span>
+              </div>
+            </a>
+            <div
+              class="grim__item-bg grim__item-bg-cover grim__item-bg--8"
+            ></div>
+          </div>
+          <div class="grim__item">
+            <div class="grim__item-bg grim__item-bg--9"></div>
+            <div
+              class="grim__item-img grim__item-img--4"
+              style="background-image: url(img/4.jpg);"
+            ></div>
+            <a href="#content-5" class="grim__link grim__item-content">
+              <div class="grim__item-inner">
+                <h3 class="grim__item-title">Jungle</h3>
+                <span class="grim__item-desc">Feel nature</span>
+              </div>
+            </a>
+            <div
+              class="grim__item-bg grim__item-bg-cover grim__item-bg--9"
+            ></div>
+          </div>
+          <div class="grim__item">
+            <div class="grim__item-bg grim__item-bg--10"></div>
+            <div
+              class="grim__item-img grim__item-img--5"
+              style="background-image: url(img/5.jpg);"
+            ></div>
+            <a href="#content-6" class="grim__link grim__item-content">
+              <div class="grim__item-inner">
+                <h3 class="grim__item-title">Mountains</h3>
+                <span class="grim__item-desc">Explore your limits</span>
+              </div>
+            </a>
+            <div
+              class="grim__item-bg grim__item-bg-cover grim__item-bg--10"
+            ></div>
+          </div>
+        </nav>
+      </div>
+  
+   
+    </main>
+   
+      <div id="ani-content">
+        <div id="deadline">
+          <svg preserveAspectRatio="none" id="line" viewBox="0 0 581 158" enable-background="new 0 0 581 158">
+            <g id="fire">
+              <rect id="mask-fire-black" x="511" y="41" width="38" height="34"/>
+              <g>
+                <defs>
+                  <rect id="mask_fire" x="511" y="41" width="38" height="34"/>
+                </defs>
+                <clipPath id="mask-fire_1_">
+                  <use xlink:href="#mask_fire"  overflow="visible"/>
+                </clipPath>
+                <g id="group-fire" clip-path="url(#mask-fire_1_)">
+                  <path id="red-flame" fill="#B71342" d="M528.377,100.291c6.207,0,10.947-3.272,10.834-8.576 c-0.112-5.305-2.934-8.803-8.237-10.383c-5.306-1.581-3.838-7.9-0.79-9.707c-7.337,2.032-7.581,5.891-7.11,8.238 c0.789,3.951,7.56,4.402,5.077,9.48c-2.482,5.079-8.012,1.129-6.319-2.257c-2.843,2.233-4.78,6.681-2.259,9.703 C521.256,98.809,524.175,100.291,528.377,100.291z"/>
+                  <path id="yellow-flame" opacity="0.71" fill="#F7B523" d="M528.837,100.291c4.197,0,5.108-1.854,5.974-5.417 c0.902-3.724-1.129-6.207-5.305-9.931c-2.396-2.137-1.581-4.176-0.565-6.32c-4.401,1.918-3.384,5.304-2.482,6.658 c1.511,2.267,2.099,2.364,0.42,5.8c-1.679,3.435-5.42,0.764-4.275-1.527c-1.921,1.512-2.373,4.04-1.528,6.563 C522.057,99.051,525.994,100.291,528.837,100.291z"/>
+                  <path id="white-flame" opacity="0.81" fill="#FFFFFF" d="M529.461,100.291c-2.364,0-4.174-1.322-4.129-3.469 c0.04-2.145,1.117-3.56,3.141-4.198c2.022-0.638,1.463-3.195,0.302-3.925c2.798,0.821,2.89,2.382,2.711,3.332 c-0.301,1.597-2.883,1.779-1.938,3.834c0.912,1.975,3.286,0.938,2.409-0.913c1.086,0.903,1.826,2.701,0.864,3.924 C532.18,99.691,531.064,100.291,529.461,100.291z"/>
+                </g>
+              </g>
+            </g>
+            <g id="progress-trail">
+              <path fill="#FFFFFF" d="M491.979,83.878c1.215-0.73-0.62-5.404-3.229-11.044c-2.583-5.584-5.034-10.066-7.229-8.878
+                                      c-2.854,1.544-0.192,6.286,2.979,11.628C487.667,80.917,490.667,84.667,491.979,83.878z"/>
+              <path fill="#FFFFFF" d="M571,76v-5h-23.608c0.476-9.951-4.642-13.25-4.642-13.25l-3.125,4c0,0,3.726,2.7,3.625,5.125
+                                      c-0.071,1.714-2.711,3.18-4.962,4.125H517v5h10v24h-25v-5.666c0,0,0.839,0,2.839-0.667s6.172-3.667,4.005-6.333
+                                      s-7.49,0.333-9.656,0.166s-6.479-1.5-8.146,1.917c-1.551,3.178,0.791,5.25,5.541,6.083l-0.065,4.5H16c-2.761,0-5,2.238-5,5v17
+                                      c0,2.762,2.239,5,5,5h549c2.762,0,5-2.238,5-5v-17c0-2.762-2.238-5-5-5h-3V76H571z"/>
+              <path fill="#FFFFFF" d="M535,65.625c1.125,0.625,2.25-1.125,2.25-1.125l11.625-22.375c0,0,0.75-0.875-1.75-2.125
+                                      s-3.375,0.25-3.375,0.25s-8.75,21.625-9.875,23.5S533.875,65,535,65.625z"/>
+            </g>
+            <g>
+              <defs>
+                <path id="SVGID_1_" d="M484.5,75.584c-3.172-5.342-5.833-10.084-2.979-11.628c2.195-1.188,4.646,3.294,7.229,8.878
+                                       c2.609,5.64,4.444,10.313,3.229,11.044C490.667,84.667,487.667,80.917,484.5,75.584z M571,76v-5h-23.608
+                                       c0.476-9.951-4.642-13.25-4.642-13.25l-3.125,4c0,0,3.726,2.7,3.625,5.125c-0.071,1.714-2.711,3.18-4.962,4.125H517v5h10v24h-25
+                                       v-5.666c0,0,0.839,0,2.839-0.667s6.172-3.667,4.005-6.333s-7.49,0.333-9.656,0.166s-6.479-1.5-8.146,1.917
+                                       c-1.551,3.178,0.791,5.25,5.541,6.083l-0.065,4.5H16c-2.761,0-5,2.238-5,5v17c0,2.762,2.239,5,5,5h549c2.762,0,5-2.238,5-5v-17
+                                       c0-2.762-2.238-5-5-5h-3V76H571z M535,65.625c1.125,0.625,2.25-1.125,2.25-1.125l11.625-22.375c0,0,0.75-0.875-1.75-2.125
+                                       s-3.375,0.25-3.375,0.25s-8.75,21.625-9.875,23.5S533.875,65,535,65.625z"/>
+              </defs>
+              <clipPath id="SVGID_2_">
+                <use xlink:href="#SVGID_1_"  overflow="visible"/>
+              </clipPath>
+              <rect id="progress-time-fill" x="-100%" y="34" clip-path="url(#SVGID_2_)" fill="#BE002A" width="586" height="103"/>
+            </g>
+        
+            <g id="death-group">
+              <path id="death" fill="#BE002A" d="M-46.25,40.416c-5.42-0.281-8.349,3.17-13.25,3.918c-5.716,0.871-10.583-0.918-10.583-0.918
+                                                 C-67.5,49-65.175,50.6-62.083,52c5.333,2.416,4.083,3.5,2.084,4.5c-16.5,4.833-15.417,27.917-15.417,27.917L-75.5,84.75
+                                                 c-1,12.25-20.25,18.75-20.25,18.75s39.447,13.471,46.25-4.25c3.583-9.333-1.553-16.869-1.667-22.75
+                                                 c-0.076-3.871,2.842-8.529,6.084-12.334c3.596-4.22,6.958-10.374,6.958-15.416C-38.125,43.186-39.833,40.75-46.25,40.416z
+                                                 M-40,51.959c-0.882,3.004-2.779,6.906-4.154,6.537s-0.939-4.32,0.112-7.704c0.82-2.64,2.672-5.96,3.959-5.583
+                                                 C-39.005,45.523-39.073,48.8-40,51.959z"/>
+              <path id="death-arm" fill="#BE002A" d="M-53.375,75.25c0,0,9.375,2.25,11.25,0.25s2.313-2.342,3.375-2.791
+                                                     c1.083-0.459,4.375-1.75,4.292-4.75c-0.101-3.627,0.271-4.594,1.333-5.043c1.083-0.457,2.75-1.666,2.75-1.666
+                                                     s0.708-0.291,0.5-0.875s-0.791-2.125-1.583-2.959c-0.792-0.832-2.375-1.874-2.917-1.332c-0.542,0.541-7.875,7.166-7.875,7.166
+                                                     s-2.667,2.791-3.417,0.125S-49.833,61-49.833,61s-3.417,1.416-3.417,1.541s-1.25,5.834-1.25,5.834l-0.583,5.833L-53.375,75.25z"/>
+              <path id="death-tool" fill="#BE002A" d="M-20.996,26.839l-42.819,91.475l1.812,0.848l38.342-81.909c0,0,8.833,2.643,12.412,7.414
+                                                      c5,6.668,4.75,14.084,4.75,14.084s4.354-7.732,0.083-17.666C-10,32.75-19.647,28.676-19.647,28.676l0.463-0.988L-20.996,26.839z"/>
+            </g>
+            <path id="designer-body" fill="#FEFFFE" d="M514.75,100.334c0,0,1.25-16.834-6.75-16.5c-5.501,0.229-5.583,3-10.833,1.666
+                                                       c-3.251-0.826-5.084-15.75-0.834-22c4.948-7.277,12.086-9.266,13.334-7.833c2.25,2.583-2,10.833-4.5,14.167
+                                                       c-2.5,3.333-1.833,10.416,0.5,9.916s8.026-0.141,10,2.25c3.166,3.834,4.916,17.667,4.916,17.667l0.917,2.5l-4,0.167L514.75,100.334z
+                                                       "/>
+        
+            <circle id="designer-head" fill="#FEFFFE" cx="516.083" cy="53.25" r="6.083"/>
+        
+            <g id="designer-arm-grop">
+              <path id="designer-arm" fill="#FEFFFE" d="M505.875,64.875c0,0,5.875,7.5,13.042,6.791c6.419-0.635,11.833-2.791,13.458-4.041s2-3.5,0.25-3.875
+                                                        s-11.375,5.125-16,3.25c-5.963-2.418-8.25-7.625-8.25-7.625l-2,1.125L505.875,64.875z"/>
+              <path id="designer-pen" fill="#FEFFFE" d="M525.75,59.084c0,0-0.423-0.262-0.969,0.088c-0.586,0.375-0.547,0.891-0.547,0.891l7.172,8.984l1.261,0.453
+                                                        l-0.104-1.328L525.75,59.084z"/>
+            </g>
+          </svg>
+        
+          <div class="deadline-days">
+            Deadline <span class="day">7</span> <span class="days">days</span>
+          </div>
+        
+        </div>    
+  
+      </div>
+
+     
+
+    <script src="js/demo.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/anime.min.js"></script>
+    <script src="js/menu2.js"></script>
+    <script src="js/deadline.js"></script>
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/stylish-portfolio.min.js"></script>
+  </body>
+</html>
